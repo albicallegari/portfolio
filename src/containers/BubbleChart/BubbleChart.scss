@@ -1,15 +1,11 @@
 @import '../../styles/constants.scss';
 @import '../../styles/mixin.scss';
 
-.home {
+.bubble-chart {
   width: 100vw;
   height: 100vh;
   padding: 16px 16px;
   overflow: hidden;
   background-color: black;
   color: white;
-  &_linkTo {
-    color: white !important;
-    text-transform: capitalize !important;
-  }
 }

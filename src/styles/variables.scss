@@ -1,0 +1,13 @@
+@import './constants.scss';
+// Questo file serve a esportare tutte le costanti contenute su constants.scss
+// In modo che siano disponibili come @import vars from 'styles/variables';
+// E poi usabili come styleConst['nome-variabile']
+:export {
+  @each $breakpointName, $breakpoint in $breakpoints {
+    #{$breakpointName}: $breakpoint;
+  }
+  @each $colorName, $color in $root-colors {
+    #{$colorName}: $color;
+  }
+
+}
