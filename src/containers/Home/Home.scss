@@ -5,7 +5,8 @@
   width: 100vw;
   height: 100vh;
   padding: 16px 16px;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
   background-color: black;
   color: white;
   &_linkTo {
