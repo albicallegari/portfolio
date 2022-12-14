@@ -169,9 +169,11 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
             fontSize={`${fontSize}px`}
             fontWeight="bold"
           >
-            <tspan x="0" dy="-0.2em">{`${item.l}`}</tspan>
+            <tspan x="0" dy="-0.2em">
+              {item.l ? `${item.l}` : '-'}
+            </tspan>
             <tspan x="0" dy="1em">
-              {`${item.v}`}
+              {item.v ? `${item.v}` : '-'}
             </tspan>
           </text>
         </g>

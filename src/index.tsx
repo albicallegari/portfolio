@@ -1,8 +1,8 @@
-import React, { lazy } from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-import './styles/index.scss';
+import "./styles/index.scss";
 
 const Home = lazy(() => import("./containers/Home/Home"));
 const BubbleChart = lazy(() => import("./containers/BubbleChart/BubbleChart"));
@@ -15,7 +15,14 @@ root.render(
     <BrowserRouter basename={process.env.REACT_APP_WEB_BASE_URL || "/"}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/bubble-chart" element={<BubbleChart />} />
+        <Route
+          path="/bubble-chart"
+          element={
+            <Suspense>
+              <BubbleChart />
+            </Suspense>
+          }
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
