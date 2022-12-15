@@ -1,13 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Box, Button } from "@mui/material";
+import { Box, Button, useMediaQuery } from "@mui/material";
 import "./Home.scss";
 
 const Home = (): JSX.Element => {
+  const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
   return (
     <Box className="home">
       <Box className="home_container">
         <Button
-          className="home_container_linkTo"
+          sx={{ color: isDarkModeEnabled ? "white" : "black" }}
+          className="home_container_linkTo_upsx"
           onClick={() => (window.location.href = "/bubble-chart")}
         >
           Bubble Chart

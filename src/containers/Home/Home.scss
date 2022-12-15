@@ -4,17 +4,37 @@
 .home {
   width: 100vw;
   height: 100vh;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
+  @media (prefers-color-scheme: dark) {
+    background-color: black;
+    color: white;
+  }
   &_container {
     position: relative;
     padding: 16px 16px;
-    &_linkTo {
+    &_linkTo_upsx,
+    &_linkTo_updx,
+    &_linkTo_dwsx,
+    &_linkTo_dwdx {
       position: absolute !important;
-      color: white !important;
       text-transform: capitalize !important;
+    }
+    &_linkTo_upsx {
       top: 16px;
       left: 16px;
+    }
+    &_linkTo_updx {
+      top: 16px;
+      right: 16px;
+    }
+    &_linkTo_dwsx {
+      bottom: 16px;
+      left: 16px;
+    }
+    &_linkTo_dwdx {
+      bottom: 16px;
+      right: 16px;
     }
   }
 }
