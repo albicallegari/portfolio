@@ -57,6 +57,8 @@ const AboutAlberto = () => {
             borderRadius: "50%",
             bottom: "56px",
             left: "calc(50% - 28px)",
+            cursor: 'pointer',
+            textAlign: "center",
             border: `1px solid ${
               themeState === "dark" ? vars["color-white"] : vars["color-black"]
             }`,
