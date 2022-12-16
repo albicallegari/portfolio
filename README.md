@@ -2,7 +2,7 @@
 Just me while having fun making some stuff
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+#### Using react 18.2.0 
 
 ### Using [MUI](https://mui.com/material-ui/getting-started/overview/) because it is well known, easy to use, customizable and full of utils
 

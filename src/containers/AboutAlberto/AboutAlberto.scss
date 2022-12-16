@@ -1,0 +1,18 @@
+@import "../../styles/constants.scss";
+@import "../../styles/mixin.scss";
+
+.aboutAlberto {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  color: black;
+  @media (prefers-color-scheme: dark) {
+    background-color: black;
+    color: white;
+  }
+  &_container {
+    height: 100%;
+    position: relative;
+    padding: 16px 16px;
+  }
+}

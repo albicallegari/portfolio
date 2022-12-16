@@ -19,3 +19,11 @@ $breakpoints: (
 //content page
 $content-page: 1033px;
 
+// ** Library colors **
+$color-white: #fff !default;
+$color-black: #000 !default;
+
+$root-colors: (
+  color-white: $color-white,
+  color-black: $color-black,
+) !default;

@@ -1,5 +1,9 @@
 {
   "global": {
+    "aboutAlb": "About Alberto",
     "bubbleChart": "Bubble Chart"
+  },
+  "aboutAlberto": {
+    "whosMe": "Who i am? And why i am?!"
   }
 }

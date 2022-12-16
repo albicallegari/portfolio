@@ -7,6 +7,7 @@ import store from "./store";
 import "./styles/index.scss";
 
 const Home = lazy(() => import("./containers/Home/Home"));
+const AboutAlberto = lazy(() => import("./containers/AboutAlberto/AboutAlberto"));
 const BubbleChart = lazy(() => import("./containers/BubbleChart/BubbleChart"));
 
 const root = ReactDOM.createRoot(
@@ -18,6 +19,7 @@ root.render(
       <BrowserRouter basename={process.env.REACT_APP_WEB_BASE_URL || "/"}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about-alberto" element={<AboutAlberto />} />
           <Route
             path="/bubble-chart"
             element={

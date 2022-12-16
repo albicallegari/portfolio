@@ -13,8 +13,16 @@ import { getTranslatedLabel } from "../../common/labels/utils";
 
 const Home = (): JSX.Element => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
-  const { theme: themeState } = useSelector((state: RootState) => state.session);
+  const { theme: themeState } = useSelector(
+    (state: RootState) => state.session
+  );
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isDarkModeEnabled) {
+      dispatch(setTheme("dark"));
+    } else dispatch(setTheme("light"));
+  }, []);
 
   useEffect(() => {
     if (isDarkModeEnabled) {
@@ -25,7 +33,7 @@ const Home = (): JSX.Element => {
   return (
     <Box className="home">
       <Box className="home_container">
-        {themeState === 'dark' && (
+        {themeState === "dark" && (
           <RiveComponents
             src={BB}
             animation="Floating"
@@ -33,8 +41,8 @@ const Home = (): JSX.Element => {
               new Layout({ fit: Fit.Contain, alignment: Alignment.Center })
             }
           />
-        )} 
-        {themeState === 'light' && (
+        )}
+        {themeState === "light" && (
           <RiveComponents
             src={BW}
             animation="Floating"
@@ -44,11 +52,26 @@ const Home = (): JSX.Element => {
           />
         )}
         <Button
-          sx={{ color: themeState === 'dark' ? "white" : "black", fontSize: '1rem' }}
+          sx={{
+            color: themeState === "dark" ? "white" : "black",
+            fontSize: "1rem",
+            fontFamily: "Nunito, sans-serif",
+          }}
           className="home_container_linkTo_upsx"
+          onClick={() => (window.location.href = "/about-alberto")}
+        >
+          {getTranslatedLabel("global.aboutAlb")}
+        </Button>
+        <Button
+          sx={{
+            color: themeState === "dark" ? "white" : "black",
+            fontSize: "1rem",
+            fontFamily: "Nunito, sans-serif",
+          }}
+          className="home_container_linkTo_updx"
           onClick={() => (window.location.href = "/bubble-chart")}
         >
-          {getTranslatedLabel('global.bubbleChart')}
+          {getTranslatedLabel("global.bubbleChart")}
         </Button>
       </Box>
     </Box>
