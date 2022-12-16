@@ -9,6 +9,7 @@ import BW from "../../assets/rive/bloodsucker-w.riv";
 import { RootState } from "../../store";
 import { useEffect } from "react";
 import "./Home.scss";
+import { getTranslatedLabel } from "../../common/labels/utils";
 
 const Home = (): JSX.Element => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
@@ -47,7 +48,7 @@ const Home = (): JSX.Element => {
           className="home_container_linkTo_upsx"
           onClick={() => (window.location.href = "/bubble-chart")}
         >
-          Bubble Chart
+          {getTranslatedLabel('global.bubbleChart')}
         </Button>
       </Box>
     </Box>

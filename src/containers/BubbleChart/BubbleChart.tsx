@@ -1,3 +1,4 @@
+import { getTranslatedLabel } from "../../common/labels/utils";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
 import { Box, IconButton } from "@mui/material";
@@ -8,7 +9,7 @@ const BubbleChart = (): JSX.Element => {
   return (
     <div className="bubble-chart">
       <Box className="bubble-chart_container" sx={{ display: "flex", justifyContent: "space-between" }}>
-        <h1>Bubble Chart</h1>
+        <h1>{getTranslatedLabel('global.bubbleChart')}</h1>
         <IconButton
           aria-label="go-back"
           name="go-back"

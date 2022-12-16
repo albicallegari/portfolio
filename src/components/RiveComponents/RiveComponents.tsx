@@ -1,7 +1,7 @@
 import { RiveComponentsProps } from "./RiveComponents.models";
 import Rive, { Alignment, Fit, Layout } from "@rive-app/react-canvas";
 
-const RiveComponents = ({ src, layout, animation }: RiveComponentsProps) => {
+const RiveComponents = ({ src, layout, animation }: RiveComponentsProps): JSX.Element => {
   return <Rive src={src || ''} layout={layout || new Layout({ fit: Fit.Contain, alignment: Alignment.TopCenter })} animations={animation} />;
 };
 
