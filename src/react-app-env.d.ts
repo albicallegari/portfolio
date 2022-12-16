@@ -20,3 +20,7 @@ declare namespace NodeJS {
     export default classes;
   }
   
+  declare module '*.riv' {
+    const src: string;
+    export default src;
+  }

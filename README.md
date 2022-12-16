@@ -11,3 +11,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 To access an SCSS constant into the functional component you should `import vars from '@src/styles/variables.scss';` (it is quite literal).
 and use them as `vars['variable-name']`. Since their name is retained from SCSS variables they are most likely dashed.
 There is an alternative: use CSS variables which unfortunately requires a polyfill for Internet Explorer.
+
+### Using [Rive](https://rive.app/) for interactive graphics
