@@ -4,11 +4,125 @@
 .home {
   width: 100vw;
   height: 100vh;
-  background-color: white;
-  color: black;
+  background-color: $color-white;
+  color: $color-black;
   @media (prefers-color-scheme: dark) {
-    background-color: black;
-    color: white;
+    background-color: $color-black;
+    color: $color-white;
+  }
+  &_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background-color: $color-black;
+    &_container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      &_a {
+        position: relative;
+        width: 350px;
+        height: 390px;
+        overflow: hidden;
+        transform: scale(0.8);
+        @media (min-width: $breakpoint-md) {
+          width: 480px;
+          height: 520px;
+        }
+        & span {
+          position: absolute;
+          top: 0;
+          width: 80px;
+          height: 100%;
+          @media (min-width: $breakpoint-md) {
+            width: 120px;
+            height: 100%;
+          }
+        }
+        & span:nth-child(1) {
+          background-color: #b00612;
+          left: 0;
+          transform-origin: bottom left;
+          transform: skewX(161deg);
+        }
+        & span:nth-child(2) {
+          background-color: #e50815;
+          left: 135px;
+          z-index: 1;
+          transform-origin: top left;
+          transform: skewX(19deg);
+          box-shadow: 0 0 40px rgba(0, 0, 0, 1);
+          @media (min-width: $breakpoint-md) {
+            left: 180px;
+          }
+        }
+        & span:nth-child(3) {
+          background-color: #b00612;
+          right: 100px;
+          top: 200px;
+          width: 180px;
+          height: 80px;
+          @media (min-width: $breakpoint-md) {
+            right: 105px;
+            top: 250px;
+            width: 200px;
+            height: 100px;
+          }
+        }
+      }
+      &_a::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -100px;
+        width: 100%;
+        height: 120px;
+        background-color: $color-black;
+        z-index: 2;
+        border-top-left-radius: 100%;
+        border-top-right-radius: 100%;
+        transform: scaleX(1.5);
+      }
+      &_a::after,
+      & h3::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 400%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0),
+          $color-black,
+          $color-black
+        );
+        z-index: 3;
+        animation: animate 2s linear forwards;
+      }
+      & h3 {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-family: "bebas neue";
+        color: $color-white;
+        font-size: 80px;
+        text-transform: uppercase;
+        letter-spacing: 15px;
+        width: 303px;
+        line-height: 4.5rem;
+        overflow: hidden;
+        @media (min-width: $breakpoint-md) {
+          font-size: 100px;
+          width: 356px;
+          line-height: 5.5rem;
+        }
+      }
+    }
   }
   &_container {
     height: 100%;
@@ -37,5 +151,14 @@
       bottom: 16px;
       right: 16px;
     }
+  }
+}
+
+@keyframes animate {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -400%;
   }
 }

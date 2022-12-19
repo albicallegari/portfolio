@@ -1,7 +1,7 @@
-@import '../../styles/constants.scss';
-@import '../../styles/mixin.scss';
+@import "../../styles/constants.scss";
+@import "../../styles/mixin.scss";
 
-.bubble-chart {
+.aboutCode {
   width: 100vw;
   height: 100vh;
   background-color: white;
@@ -11,14 +11,8 @@
     color: white;
   }
   &_container {
+    height: 100%;
     position: relative;
     padding: 16px 16px;
-    & h1 {
-      margin: 0;
-      color: black;
-      @media (prefers-color-scheme: dark) {
-        color: white;
-      }
-    }
   }
 }

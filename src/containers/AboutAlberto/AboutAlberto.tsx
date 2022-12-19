@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { Box, IconButton, Typography, useMediaQuery } from "@mui/material";
-import { setTheme } from "../../store/sessionSlice/sessionSlice";
+import FloatingScrollButton from "../../components/FloatingScrollButton/FloatingScrollButton";
+import BackNavButton from "../../components/BackNavButton/BackNavButton";
 import { getTranslatedLabel } from "../../common/labels/utils";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useDispatch, useSelector } from "react-redux";
+import { Box, IconButton, Typography, useMediaQuery } from "@mui/material";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import vars from "../../styles/variables.scss";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
-import { useEffect } from "react";
 import "./AboutAlberto.scss";
+import { useEffect } from "react";
+import { setTheme } from "../../store/sessionSlice/sessionSlice";
 
 const AboutAlberto = () => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
@@ -17,7 +17,6 @@ const AboutAlberto = () => {
     (state: RootState) => state.session
   );
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (isDarkModeEnabled) {
@@ -30,47 +29,44 @@ const AboutAlberto = () => {
       dispatch(setTheme("dark"));
     } else dispatch(setTheme("light"));
   }, [isDarkModeEnabled]);
-
+  const handleLinkedinProfile = () => {
+    window.open(getTranslatedLabel("aboutAlberto.linkedin"));
+  };
   return (
     <Box className="aboutAlberto">
       <Box className="aboutAlberto_container">
         <Typography
           variant="h1"
-          sx={{ textAlign: "center", fontSize: "2rem", fontWeight: "500" }}
+          sx={{
+            fontFamily: "Nunito, sans-serif",
+            textAlign: "center",
+            fontSize: "2rem",
+            fontWeight: "500",
+          }}
         >
-          {getTranslatedLabel("aboutAlberto.whosMe")}
+          {getTranslatedLabel("aboutAlberto.title")}
         </Typography>
         <IconButton
           aria-label="go-back"
           name="go-back"
-          onClick={() => navigate(-1)}
-          sx={{ position: "absolute", top: "16px", right: "16px" }}
-        >
-          <ArrowBackIcon sx={{ color: "white" }} />
-        </IconButton>
-        <Box
-          aria-label="scroll"
+          onClick={handleLinkedinProfile}
           sx={{
             position: "absolute",
-            width: "56px",
-            height: "56px",
-            borderRadius: "50%",
-            bottom: "56px",
-            left: "calc(50% - 28px)",
-            cursor: 'pointer',
-            textAlign: "center",
-            border: `1px solid ${
-              themeState === "dark" ? vars["color-white"] : vars["color-black"]
-            }`,
+            top: "16px",
+            left: "16px",
           }}
         >
-          <KeyboardArrowDownIcon
-            sx={{ marginTop: "17px" }}
-            color={
-              themeState === "dark" ? vars["color-white"] : vars["color-black"]
-            }
+          <LinkedInIcon
+            sx={{
+              color:
+                themeState === "dark"
+                  ? vars["color-white"]
+                  : vars["color-black"],
+            }}
           />
-        </Box>
+        </IconButton>
+        <BackNavButton />
+        <FloatingScrollButton />
       </Box>
     </Box>
   );

@@ -22,8 +22,12 @@ $content-page: 1033px;
 // ** Library colors **
 $color-white: #fff !default;
 $color-black: #000 !default;
+$color-white50: #8c8d93 !default;
+$color-white20: #2C2E34 !default;
 
 $root-colors: (
   color-white: $color-white,
   color-black: $color-black,
+  color-white50: $color-white50,
+  color-white20: $color-white20,
 ) !default;

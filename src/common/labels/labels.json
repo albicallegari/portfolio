@@ -1,9 +1,15 @@
 {
   "global": {
     "aboutAlb": "About Alberto",
+    "aboutCode": "Code",
     "bubbleChart": "Bubble Chart"
   },
   "aboutAlberto": {
-    "whosMe": "Who i am? And why i am?!"
+    "title": "Who i am? ...And why i am?!",
+    "linkedin": "https://www.linkedin.com/in/alberto-callegari-756314142/"
+  },
+  "aboutCode": {
+    "title": "I collected some",
+    "code": "{code}"
   }
 }
