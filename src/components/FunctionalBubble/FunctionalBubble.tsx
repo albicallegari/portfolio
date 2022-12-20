@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import {
@@ -17,6 +18,7 @@ import {
 import _ from 'lodash';
 import vars from '../../../../styles/variables.scss';
 import { useMediaQuery, useTheme } from '@mui/material';
+import useWindowDimensions from '../../hooks/useWindowDimensions/useWindowDimensions';
 
 export interface FunctionalBubbleSimulationNodeDatum extends SimulationNodeDatum {
   v: number;
@@ -49,6 +51,7 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
     mounted: false,
     simulation: undefined,
   });
+  const { height: windowHeight } = useWindowDimensions();
 
   const isDarkTheme = useTheme().palette.mode === 'dark';
   const isTablet = useMediaQuery(`(min-width:${vars['breakpoint-md']})`);
@@ -63,7 +66,7 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
       setContainerHeight(height);
     } else if (isTablet) {
       setContainerWidth(600);
-      setContainerHeight(600);
+      setContainerHeight(percentage(78, windowHeight as number));
     } else if (!isSPhone && !isTablet) {
       setContainerWidth(400);
       setContainerHeight(400);
@@ -88,6 +91,10 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [propData]);
+
+  function percentage(partialValue: number, totalValue: number) {
+    return (partialValue * totalValue) / 100;
+  }
 
   const radiusScale = (value: number) => {
     let fx = scaleSqrt().range([25, 130]).domain([_this.current.minValue, _this.current.maxValue]);
