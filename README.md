@@ -20,3 +20,8 @@ D3 gives you the full capabilities of modern browsers without tying yourself to 
 ### Using [Ramda](https://ramdajs.com/docs/) can help you get the job done with simple, elegant code.
 
 ### Using [Axios](https://axios-http.com/docs/intro) to fetch data.
+
+## Utils corner
+
+**GenerateClassName** is a simple util that helps you to use classes conditionally.
+**IsNotNullOrEmpty** trought *ramda* it helps you to detect if Object is empty or null

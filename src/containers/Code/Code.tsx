@@ -86,7 +86,7 @@ const Code = () => {
                   color: themeState === "dark" ? "white" : "black",
                   textTransform: "capitalize",
                 },
-                ".MuiTab-root .Mui-selected": {
+                ".MuiTab-root.Mui-selected": {
                   color: themeState === "dark" ? "white" : "black",
                 },
               }}

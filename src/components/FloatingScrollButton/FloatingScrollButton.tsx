@@ -13,11 +13,11 @@ const FloatingScrollButton = (): JSX.Element => {
       aria-label="scroll"
       sx={{
         position: "absolute",
-        width: "56px",
-        height: "56px",
+        width: "50px",
+        height: "50px",
         borderRadius: "50%",
         bottom: "56px",
-        left: "calc(50% - 28px)",
+        left: "calc(50% - 25px)",
         cursor: "pointer",
         textAlign: "center",
         border: `1px solid ${vars["color-white50"]}`,
@@ -29,7 +29,7 @@ const FloatingScrollButton = (): JSX.Element => {
       }}
     >
       <KeyboardArrowDownIcon
-        sx={{ marginTop: "17px" }}
+        sx={{ marginTop: "15px" }}
         color={
           themeState === "dark" ? vars["color-white"] : vars["color-black"]
         }

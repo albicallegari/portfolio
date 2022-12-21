@@ -6,8 +6,16 @@
     "test": "TEST"
   },
   "aboutAlberto": {
-    "title": "Who i am? ...And why i am?!",
-    "linkedin": "https://www.linkedin.com/in/alberto-callegari-756314142/"
+    "title": "Who i am?",
+    "title1": "...And why i am?!",
+    "linkedin": "https://www.linkedin.com/in/alberto-callegari-756314142/",
+    "profileCard": {
+      "name": "Alberto Callegari",
+      "bDay": "06/09/1993",
+      "nationality": "Italy",
+      "role": "Software Developer Engineer",
+      "secondRole": "FE Developer"
+    }
   },
   "aboutCode": {
     "title": "I collected some",
