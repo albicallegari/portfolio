@@ -1,0 +1,47 @@
+@import '../../styles/constants.scss';
+@import '../../styles/mixin.scss';
+
+.loader {
+  &_container {
+    z-index: 999;
+    position: relative;
+    .loader {
+      z-index: 999;
+      display: inline-block;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      position: absolute;
+      // background: linear-gradient(white, white), conic-gradient(from 0.15turn, white, #e70060);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      &--large {
+        width: 100px;
+        height: 100px;
+        inset: calc(50% - 50px);
+        top: 40%;
+        mask: radial-gradient(farthest-side, #0000 calc(100% - 20px), #fff 0);
+      }
+      &--medium {
+        width: 50px;
+        height: 50px;
+        inset: calc(50% - 25px);
+        mask: radial-gradient(farthest-side, #0000 calc(100% - 10px), #fff 0);
+      }
+      &--small {
+        width: 25px;
+        height: 25px;
+        inset: calc(50% - 12.5px);
+        mask: radial-gradient(farthest-side, #0000 calc(100% - 5px), #fff 0);
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

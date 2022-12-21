@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { FunctionComponent, useEffect, useRef, useState } from 'react';
+import { FunctionComponent, useEffect, useRef, useState } from "react";
 import {
   scaleLinear,
   scaleSqrt,
@@ -13,16 +13,23 @@ import {
   ScaleLinear,
   Simulation,
   SimulationNodeDatum,
-} from 'd3';
+} from "d3";
 
-import _ from 'lodash';
-import vars from '../../../../styles/variables.scss';
-import { useMediaQuery, useTheme } from '@mui/material';
-import useWindowDimensions from '../../hooks/useWindowDimensions/useWindowDimensions';
+import _ from "lodash";
+import vars from "../../styles/variables.scss";
+import { useMediaQuery } from "@mui/material";
+import useWindowDimensions from "../../hooks/useWindowDimensions/useWindowDimensions";
+import { RootState } from "../../store";
+import { useSelector } from "react-redux";
+import isNullOrEmpty from "../../utils/isNullOrEmpty";
+import Loader, { SizeLoader } from "../Loader/Loader";
 
-export interface FunctionalBubbleSimulationNodeDatum extends SimulationNodeDatum {
+export interface FunctionalBubbleSimulationNodeDatum
+  extends SimulationNodeDatum {
   v: number;
   l: string;
+  l2?: string;
+  img?: string;
 }
 
 interface FunctionalBubbleProps {
@@ -36,7 +43,9 @@ interface FunctionalBubbleInstanceProps {
   minValue: number;
   maxValue: number;
   mounted: boolean;
-  simulation: Simulation<FunctionalBubbleSimulationNodeDatum, undefined> | undefined;
+  simulation:
+    | Simulation<FunctionalBubbleSimulationNodeDatum, undefined>
+    | undefined;
 }
 
 const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
@@ -51,37 +60,46 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
     mounted: false,
     simulation: undefined,
   });
-  const { height: windowHeight } = useWindowDimensions();
 
-  const isDarkTheme = useTheme().palette.mode === 'dark';
-  const isTablet = useMediaQuery(`(min-width:${vars['breakpoint-md']})`);
-  const isSPhone = useMediaQuery(`(max-width:${vars['breakpoint-sm']})`);
+  const visibilityState = useSelector(
+    (state: RootState) => state.loader.visible
+  );
+  const { height: windowHeight, width: windowWidth } = useWindowDimensions();
+  const isDarkTheme = useSelector(
+    (state: RootState) => state.session.theme === "dark"
+  );
+  const isTablet = useMediaQuery(`(min-width:${vars["breakpoint-md"]})`);
+  const isSPhone = useMediaQuery(`(max-width:${vars["breakpoint-sm"]})`);
   const [containerWidth, setContainerWidth] = useState(600);
   const [containerHeight, setContainerHeight] = useState(600);
-  const [data, setData] = useState<Array<FunctionalBubbleSimulationNodeDatum>>([]);
+  const [data, setData] = useState<Array<FunctionalBubbleSimulationNodeDatum>>(
+    []
+  );
 
   useEffect(() => {
     if (width && height) {
       setContainerWidth(width);
       setContainerHeight(height);
     } else if (isTablet) {
-      setContainerWidth(600);
-      setContainerHeight(percentage(78, windowHeight as number));
+      setContainerWidth(percentage(85, windowWidth as number));
+      setContainerHeight(percentage(85, windowHeight as number));
     } else if (!isSPhone && !isTablet) {
       setContainerWidth(400);
       setContainerHeight(400);
     } else {
-      setContainerWidth(325);
-      setContainerHeight(500);
+      setContainerWidth(percentage(84, windowWidth as number));
+      setContainerHeight(percentage(65, windowHeight as number));
     }
   }, [width, height, isTablet, isSPhone]);
 
   useEffect(() => {
     _this.current.mounted = true;
     if (propData.length > 0) {
-      _this.current.minValue = 0.95 * Math.min(...propData.map((item) => item.v));
+      _this.current.minValue =
+        0.95 * Math.min(...propData.map((item) => item.v));
 
-      _this.current.maxValue = 1.05 * Math.max(...propData.map((item) => item.v));
+      _this.current.maxValue =
+        1.05 * Math.max(...propData.map((item) => item.v));
 
       simulatePositions(propData);
     }
@@ -92,45 +110,77 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [propData]);
 
-  function percentage(partialValue: number, totalValue: number) {
+  const percentage = (partialValue: number, totalValue: number) => {
     return (partialValue * totalValue) / 100;
-  }
+  };
+
+  const formatPercetage = (num: string) => {
+    const newNum = `${num.split(".")[0]}.${num.split(".")[1].substring(0, 2)}`;
+    if (newNum.startsWith("-")) {
+      return newNum;
+    } else {
+      return `+${newNum}`;
+    }
+  };
+
+  const formatName = (name: string) => {
+    if (!isNullOrEmpty(name.split(" ")[1])) {
+      return `${name.split(" ")[0]} ${name.split(" ")[1].charAt(0)}`;
+    } else return name;
+  };
 
   const radiusScale = (value: number) => {
-    let fx = scaleSqrt().range([25, 130]).domain([_this.current.minValue, _this.current.maxValue]);
+    let fx = scaleSqrt()
+      .range([25, 130])
+      .domain([_this.current.minValue, _this.current.maxValue]);
     if (isSPhone) {
-      fx = scaleSqrt().range([15, 35]).domain([_this.current.minValue, _this.current.maxValue]);
+      fx = scaleSqrt()
+        .range([15, 30])
+        .domain([_this.current.minValue, _this.current.maxValue]);
     } else if (!isSPhone && !isTablet) {
-      fx = scaleSqrt().range([20, 50]).domain([_this.current.minValue, _this.current.maxValue]);
-    } else fx = scaleSqrt().range([25, 130]).domain([_this.current.minValue, _this.current.maxValue]);
+      fx = scaleSqrt()
+        .range([20, 40])
+        .domain([_this.current.minValue, _this.current.maxValue]);
+    } else
+      fx = scaleSqrt()
+        .range([20, 100])
+        .domain([_this.current.minValue, _this.current.maxValue]);
 
     return fx(value);
   };
 
-  const simulatePositions = (dataToRender: Array<FunctionalBubbleSimulationNodeDatum>) => {
+  const simulatePositions = (
+    dataToRender: Array<FunctionalBubbleSimulationNodeDatum>
+  ) => {
     const clonedData = _.clone(dataToRender);
-    _this.current.simulation = forceSimulation<FunctionalBubbleSimulationNodeDatum>()
-      .nodes(clonedData)
-      .velocityDecay(0.5)
-      .force('x', forceX().strength(0.05))
-      .force('y', forceY().strength(0.05))
-      .force(
-        'collide',
-        forceCollide((d) => radiusScale(d.v) + 2)
-      )
-      .on('tick', () => {
-        if (_this.current.mounted) {
-          setData(_.clone(clonedData));
-        }
-      });
+    _this.current.simulation =
+      forceSimulation<FunctionalBubbleSimulationNodeDatum>()
+        .nodes(clonedData)
+        .velocityDecay(0.5)
+        .force("x", forceX().strength(0.05))
+        .force("y", forceY().strength(0.05))
+        .force(
+          "collide",
+          forceCollide((d) => radiusScale(d.v) + 2)
+        )
+        .on("tick", () => {
+          if (_this.current.mounted) {
+            setData(_.clone(clonedData));
+          }
+        });
   };
 
-  const renderBubbles = (dataToRender: Array<FunctionalBubbleSimulationNodeDatum>) => {
+  const renderBubbles = (
+    dataToRender: Array<FunctionalBubbleSimulationNodeDatum>
+  ) => {
     const { minValue, maxValue } = _this.current;
     const color = scaleLinear()
       .domain([minValue, maxValue])
       .interpolate(interpolateHcl as any)
-      .range(['#db8fae', '#e70060'] as any) as unknown as ScaleLinear<number, string>;
+      .range(["#db8fae", "#e70060"] as any) as unknown as ScaleLinear<
+      number,
+      string
+    >;
 
     // render simple circle element
     if (!hasLabels) {
@@ -149,12 +199,20 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
         );
       });
 
-      return <g transform={`translate(${containerWidth / 2}, ${containerHeight / 2})`}>{circles}</g>;
+      return (
+        <g
+          transform={`translate(${containerWidth / 2}, ${containerHeight / 2})`}
+        >
+          {circles}
+        </g>
+      );
     }
 
     // render circle and text elements inside a group
     const texts = _.map(dataToRender, (item, index) => {
-      const fontSize = radiusScale(item.v) / 2;
+      const fontSize = radiusScale(item.v) / 3;
+      const percentFormatted = item.l2 ? formatPercetage(item.l2) : "-";
+      const nameFormatted = item.l ? formatName(item.l) : "-";
       return (
         <g
           key={index}
@@ -169,20 +227,42 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
             stroke={rgb(color(item.v)).toString()}
             strokeWidth="2"
           />
-          <text
-            dy="6"
-            fill={isDarkTheme ? '#fff' : vars['color-magenta2']}
-            textAnchor="middle"
-            fontSize={`${fontSize}px`}
-            fontWeight="bold"
-          >
-            <tspan x="0" dy="-0.2em">
-              {item.l ? `${item.l}` : '-'}
-            </tspan>
-            <tspan x="0" dy="1em">
-              {item.v ? `${item.v}` : '-'}
-            </tspan>
-          </text>
+          {fontSize <= 22 && (
+            <image
+              width="20"
+              height="20"
+              xlinkHref={item.img}
+              x="-0.6em"
+              y={fontSize > 8 ? "-30px" : "-10px"}
+              // clip-path="url(#circleView)"
+            />
+          )}
+          {fontSize > 22 && (
+            <image
+              width="20"
+              height="20"
+              xlinkHref={item.img}
+              x="-0.6em"
+              y="-50px"
+              // clip-path="url(#circleView)"
+            />
+          )}
+          {fontSize > 8 && (
+            <text
+              dy="6"
+              fill={isDarkTheme ? "#fff" : vars["color-magenta2"]}
+              textAnchor="middle"
+              fontSize={`${fontSize}px`}
+              fontWeight="bold"
+              x="0"
+              y="0"
+            >
+              <tspan>{item.l ? `${nameFormatted}` : "-"}</tspan>
+              <tspan x="0" dy="1.2em">
+                {item.l2 ? `${percentFormatted}%` : "-"}
+              </tspan>
+            </text>
+          )}
         </g>
       );
     });
@@ -190,15 +270,13 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
     return texts;
   };
 
-  if (data.length) {
-    return (
-      <svg width={containerWidth} height={containerHeight}>
-        {renderBubbles(data)}
-      </svg>
-    );
-  }
-
-  return <div>Loading</div>;
+  return visibilityState || !data.length ? (
+    <Loader containerStyle={{ width: containerWidth, height: containerHeight }} size={SizeLoader.LARGE} />
+  ) : (
+    <svg width={containerWidth} height={containerHeight}>
+      {renderBubbles(data)}
+    </svg>
+  );
 };
 
 export default FunctionalBubble;

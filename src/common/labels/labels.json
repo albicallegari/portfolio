@@ -2,7 +2,8 @@
   "global": {
     "aboutAlb": "About Alberto",
     "aboutCode": "Code",
-    "bubbleChart": "Bubble Chart"
+    "bubbleChart": "Bubble Chart",
+    "test": "TEST"
   },
   "aboutAlberto": {
     "title": "Who i am? ...And why i am?!",

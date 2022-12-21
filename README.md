@@ -16,3 +16,7 @@ There is an alternative: use CSS variables which unfortunately requires a polyfi
 ### Using [D3](https://d3js.org/) 7.7.0 for manipulating documents based on data:
 
 D3 gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation. For example, you can use D3 to generate an HTML table from an array of numbers. Or, use the same data to create an interactive SVG bar chart with smooth transitions and interaction.
+
+### Using [Ramda](https://ramdajs.com/docs/) can help you get the job done with simple, elegant code.
+
+### Using [Axios](https://axios-http.com/docs/intro) to fetch data.
