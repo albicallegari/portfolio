@@ -71,12 +71,26 @@ const AboutDescription = ({ goToSection }: AboutDescriptionProps) => {
           fontFamily: "Nunito, sans-serif",
           //   marginTop: "20%",
           color: isDarkTheme ? vars["color-white"] : vars["color-black"],
-          ...(!isTablet ? { marginBottom: "20%" } : null),
         }}
       >
         {getTranslatedLabel("aboutAlberto.aboutDescription.aboutDesc")}
       </Typography>
-      {isTablet && isVisible && <FloatingScrollButton goToSection={goToSection} />}
+      <Typography
+        className="aboutDescription_typing"
+        sx={{
+          width: isTablet ? "60%" : "70%",
+          height: "fit-content",
+          fontFamily: "Nunito, sans-serif",
+          marginTop: "16px",
+          color: isDarkTheme ? vars["color-white"] : vars["color-black"],
+          ...(!isTablet ? { marginBottom: "20%" } : null),
+        }}
+      >
+        {getTranslatedLabel("aboutAlberto.aboutDescription.aboutDesc2")}
+      </Typography>
+      {isTablet && isVisible && (
+        <FloatingScrollButton goToSection={goToSection} />
+      )}
     </Box>
   );
 };

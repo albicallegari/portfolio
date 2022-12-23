@@ -4,7 +4,7 @@
 .aboutDescription {
   &_textAnimation {
     margin-bottom: 16px;
-    color: #e5e5e5;
+    color: $color-black;
     font-size: 2.26rem;
     text-transform: uppercase;
     height: fit-content;
@@ -12,6 +12,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    @media (prefers-color-scheme: dark) {
+      color: #e5e5e5;
+    }
     @media (min-width: $breakpoint-md) {
       flex-direction: row;
     }
@@ -31,9 +34,9 @@
     }
     &_animation > div > div {
       padding: 0.25rem 0.75rem;
-      height:2.81rem;
+      height: 2.81rem;
       margin-bottom: 2.81rem;
-      display:inline-block;
+      display: inline-block;
     }
     &_animation div:first-child {
       animation: text-animation 8s infinite;
@@ -42,14 +45,34 @@
 }
 
 @keyframes text-animation {
-  0% {margin-top: 0;}
-  10% {margin-top: 0;}
-  20% {margin-top: -49px;}
-  30% {margin-top: -49px;}
-  40% {margin-top: -99px;}
-  60% {margin-top: -99px;}
-  70% {margin-top: -49px;}
-  80% {margin-top: -49px;}
-  90% {margin-top: 0;}
-  100% {margin-top: 0;}
+  0% {
+    margin-top: 0;
+  }
+  10% {
+    margin-top: 0;
+  }
+  20% {
+    margin-top: -49px;
+  }
+  30% {
+    margin-top: -49px;
+  }
+  40% {
+    margin-top: -99px;
+  }
+  60% {
+    margin-top: -99px;
+  }
+  70% {
+    margin-top: -49px;
+  }
+  80% {
+    margin-top: -49px;
+  }
+  90% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 0;
+  }
 }

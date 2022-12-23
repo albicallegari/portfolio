@@ -3,6 +3,7 @@
     "aboutAlb": "About Alberto",
     "aboutCode": "Code",
     "bubbleChart": "Bubble Chart",
+    "watches": "Watches",
     "test": "TEST"
   },
   "aboutAlberto": {
@@ -19,7 +20,8 @@
     "aboutDescription": {
       "feDev": "Front-end developer",
       "swEng": "Software developer Engineer",
-      "aboutDesc": "In my academic experience I have attended several courses in computer science and software engineering always trying to keep myself updated and learn new things. In my work experience instead I practiced the entire software lifecycle, from requirements discussions with customers to UI and UX analysis and processing with the design team to software distribution and maintenance. I have collaborated on interesting projects for big clients in Italy where I have learned a lot, I love my job day by day. I worked with many technologies, from simple landing pages with simple html, css and javascript to single page application using frameworks like React.js or Angular and I have had experiences with CMS such as Magnolia CMS, Open CMS, Wordpress and Adobe Experience Manager. Right now I'm using React/Typescript, Node, Html, CSS, React.js or Angular as Frontend Framework, i also used in the past some html template engines like Pug/Jade to make the html templates building faster."
+      "aboutDesc": "In my academic experience I have attended several courses in computer science and software engineering always trying to keep myself updated and learn new things. In my work experience instead I practiced the entire software lifecycle, from requirements discussions with customers to UI and UX analysis and processing with the design team to software distribution and maintenance. I have collaborated on interesting projects for big clients in Italy where I have learned a lot, I love my job day by day. I worked with many technologies, from simple landing pages with simple html, css and javascript to single page application using frameworks like React.js or Angular and I have had experiences with CMS such as Magnolia CMS, Open CMS, Wordpress and Adobe Experience Manager. Right now I'm using React/Typescript, Node, Html, SASS (CSS), React.js or Angular as Frontend Framework, i also used in the past some html template engines like Pug/Jade to make the html templates building faster.",
+      "aboutDesc2": "This react project is meant to be a set of components that I have made over time."
     },
     "techCorner": {
       "title": "Tech-corner"

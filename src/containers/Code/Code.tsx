@@ -2,17 +2,18 @@
 import { Box, Tab, Tabs, useMediaQuery } from "@mui/material";
 import { getTranslatedLabel } from "../../common/labels/utils";
 import BackNavButton from "../../components/BackNavButton/BackNavButton";
+import { getTabsConfig, getWrapperBoxConfig } from "./Code.utils";
 import { setTheme } from "../../store/sessionSlice/sessionSlice";
 import BubbleChart from "./components/BubbleChart/BubbleChart";
+import CodeTitle from "./components/CodeTitle/CodeTitle";
 import { useDispatch, useSelector } from "react-redux";
 import TabPanel from "./components/TabPanel/TabPanel";
+import Watches from "./components/Watches/Watches";
 import vars from "../../styles/variables.scss";
 import { CodeProejects } from "./Code.models";
 import { useEffect, useState } from "react";
 import { RootState } from "../../store";
 import "./Code.scss";
-import CodeTitle from "./components/CodeTitle/CodeTitle";
-import { getTabsConfig, getWrapperBoxConfig } from "./Code.utils";
 
 const Code = () => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
@@ -66,6 +67,10 @@ const Code = () => {
                 label={getTranslatedLabel("global.bubbleChart")}
               />
               <Tab
+                value={CodeProejects.WATCHES}
+                label={getTranslatedLabel("global.watches")}
+              />
+              <Tab
                 value={CodeProejects.TEST}
                 label={getTranslatedLabel("global.test")}
               />
@@ -78,6 +83,13 @@ const Code = () => {
               selectedTab={tabSelected}
             >
               <BubbleChart />
+            </TabPanel>
+            <TabPanel
+              value={CodeProejects.WATCHES}
+              index={CodeProejects.WATCHES}
+              selectedTab={tabSelected}
+            >
+              <Watches />
             </TabPanel>
             <TabPanel
               value={CodeProejects.TEST}
