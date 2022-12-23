@@ -10,6 +10,7 @@ const AboutTitle = () => {
       sx={{
         fontFamily: "Nunito, sans-serif",
         position: "fixed",
+        top: "16px",
         left: "calc(50% - 195px)",
         fontSize: "2rem",
         fontWeight: "500",
@@ -26,6 +27,7 @@ const AboutTitle = () => {
         flexDirection: "column",
         alignItems: "center",
         position: "fixed",
+        top: "16px",
         left: "calc(50% - 120px)",
       }}
     >

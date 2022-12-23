@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Box, Tab, Tabs, Typography, useMediaQuery } from "@mui/material";
+import { Box, Tab, Tabs, useMediaQuery } from "@mui/material";
 import { getTranslatedLabel } from "../../common/labels/utils";
 import BackNavButton from "../../components/BackNavButton/BackNavButton";
 import { setTheme } from "../../store/sessionSlice/sessionSlice";
@@ -11,6 +11,8 @@ import { CodeProejects } from "./Code.models";
 import { useEffect, useState } from "react";
 import { RootState } from "../../store";
 import "./Code.scss";
+import CodeTitle from "./components/CodeTitle/CodeTitle";
+import { getTabsConfig, getWrapperBoxConfig } from "./Code.utils";
 
 const Code = () => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
@@ -46,50 +48,14 @@ const Code = () => {
   return (
     <Box className="aboutCode">
       <Box className="aboutCode_container">
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: isTablet ? "row" : "column",
-            justifyContent: "center",
-            gap: 1,
-          }}
-        >
-          <Typography
-            sx={{
-              fontSize: "2rem",
-              fontWeight: "500",
-              fontFamily: "Nunito, sans-serif",
-            }}
-          >
-            {getTranslatedLabel("aboutCode.title")}
-          </Typography>
-          <Typography
-            sx={{ fontSize: "2rem" }}
-            fontFamily={"fira code, monospace"}
-          >
-            {getTranslatedLabel("aboutCode.code")}
-          </Typography>
-        </Box>
+        <CodeTitle />
         <BackNavButton />
         <Box
-          sx={{
-            display: "flex",
-            marginTop: "24px",
-            flexDirection: isTablet ? "row" : "column",
-          }}
+          sx={getWrapperBoxConfig(isTablet)}
         >
           <Box>
             <Tabs
-              sx={{
-                maxWidth: "200px",
-                ".MuiTab-root": {
-                  color: themeState === "dark" ? "white" : "black",
-                  textTransform: "capitalize",
-                },
-                ".MuiTab-root.Mui-selected": {
-                  color: themeState === "dark" ? "white" : "black",
-                },
-              }}
+              sx={getTabsConfig(themeState)}
               value={tabSelected}
               onChange={handleChange}
               aria-label="tab dettaglio elemento"

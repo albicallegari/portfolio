@@ -1,0 +1,55 @@
+@import "../../../../styles/constants.scss";
+@import "../../../../styles/mixin.scss";
+
+.aboutDescription {
+  &_textAnimation {
+    margin-bottom: 16px;
+    color: #e5e5e5;
+    font-size: 2.26rem;
+    text-transform: uppercase;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+    }
+    & p {
+      margin: 0;
+      text-shadow: 0 0 7px rgba(255, 255, 255, 0.3),
+        0 0 3px rgba(255, 255, 255, 0.3);
+    }
+    &_animation {
+      height: 48px;
+      overflow: hidden;
+      margin-left: 1rem;
+      max-width: 80%;
+      @media (min-width: $breakpoint-md) {
+        max-width: none;
+      }
+    }
+    &_animation > div > div {
+      padding: 0.25rem 0.75rem;
+      height:2.81rem;
+      margin-bottom: 2.81rem;
+      display:inline-block;
+    }
+    &_animation div:first-child {
+      animation: text-animation 8s infinite;
+    }
+  }
+}
+
+@keyframes text-animation {
+  0% {margin-top: 0;}
+  10% {margin-top: 0;}
+  20% {margin-top: -49px;}
+  30% {margin-top: -49px;}
+  40% {margin-top: -99px;}
+  60% {margin-top: -99px;}
+  70% {margin-top: -49px;}
+  80% {margin-top: -49px;}
+  90% {margin-top: 0;}
+  100% {margin-top: 0;}
+}

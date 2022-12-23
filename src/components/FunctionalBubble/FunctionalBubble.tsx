@@ -233,7 +233,7 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
               height="20"
               xlinkHref={item.img}
               x="-0.6em"
-              y={fontSize > 8 ? "-30px" : "-10px"}
+              y={fontSize > 10 ? "-30px" : "-10px"}
               // clip-path="url(#circleView)"
             />
           )}
@@ -247,7 +247,7 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
               // clip-path="url(#circleView)"
             />
           )}
-          {fontSize > 8 && (
+          {fontSize > 10 && (
             <text
               dy="6"
               fill={isDarkTheme ? "#fff" : vars["color-magenta2"]}

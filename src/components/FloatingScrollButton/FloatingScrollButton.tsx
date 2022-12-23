@@ -4,19 +4,30 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { Box } from "@mui/material";
 
-const FloatingScrollButton = (): JSX.Element => {
+export interface FloatingScrollButtonProps {
+  goToSection: React.MutableRefObject<HTMLDivElement | null>;
+}
+const FloatingScrollButton = ({ goToSection }: FloatingScrollButtonProps): JSX.Element => {
   const { theme: themeState } = useSelector(
     (state: RootState) => state.session
   );
+
+  const scrollTo = (section: React.MutableRefObject<HTMLDivElement | null>) => {
+    if (section && section.current) {
+      section.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Box
       aria-label="scroll"
+      onClick={() => scrollTo(goToSection)}
       sx={{
-        position: "absolute",
+        position: "fixed",
         width: "50px",
         height: "50px",
         borderRadius: "50%",
-        bottom: "56px",
+        bottom: "45px",
         left: "calc(50% - 25px)",
         cursor: "pointer",
         textAlign: "center",

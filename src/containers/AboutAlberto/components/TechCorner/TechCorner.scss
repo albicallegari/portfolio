@@ -1,0 +1,24 @@
+@import "../../../../styles/constants.scss";
+@import "../../../../styles/mixin.scss";
+
+.techCorner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &_grid {
+    width: 80%;
+    height: 70vh;
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: auto auto;
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: auto auto auto auto;
+    }
+    &_techIcon {
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+    }
+  }
+}

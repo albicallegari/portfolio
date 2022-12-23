@@ -18,7 +18,7 @@ const BackNavButton = ({ top, bottom, right, left }: BackNavButtonProps) => {
       name="go-back"
       onClick={() => navigate(-1)}
       sx={{ 
-        position: "absolute", 
+        position: "fixed", 
         ...(!(top || bottom) && {top: "16px"}), 
         ...(!(right || left) && {right: "16px"}), 
         ...(top && {top: top}),

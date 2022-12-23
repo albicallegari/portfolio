@@ -7,8 +7,16 @@ import { RootState } from "../../../../store";
 import { getTranslatedLabel } from "../../../../common/labels/utils";
 import PlaceIcon from "@mui/icons-material/Place";
 import vars from "../../../../styles/variables.scss";
+import FloatingScrollButton from "../../../../components/FloatingScrollButton/FloatingScrollButton";
+import { useRef } from "react";
+import useOnScreen from "../../../../hooks/useOnScreen/useOnScreen";
 
-const ProfileCard = () => {
+export interface ProfileCardProps {
+  goToSection: React.MutableRefObject<HTMLDivElement | null>;
+}
+const ProfileCard = ({ goToSection }: ProfileCardProps): JSX.Element => {
+  const cardRef = useRef(null);
+  const isVisible = useOnScreen(cardRef);
   const isTablet = useMediaQuery(`(min-width:${vars["breakpoint-md"]})`);
   const isDarkTheme = useSelector(
     (state: RootState) => state.session.theme === "dark"
@@ -17,9 +25,10 @@ const ProfileCard = () => {
     <Box
       className="profileCard"
       id="profile-card"
-      sx={{ width: "100%", height: "100%" }}
+      sx={{ width: "100%", height: "100vh" }}
     >
       <Box
+        ref={cardRef}
         className="profileCard_card"
         sx={{
           display: "flex",
@@ -95,6 +104,9 @@ const ProfileCard = () => {
           </Typography>
         </div>
       </Box>
+      {isTablet && isVisible && (
+        <FloatingScrollButton goToSection={goToSection} />
+      )}
     </Box>
   );
 };

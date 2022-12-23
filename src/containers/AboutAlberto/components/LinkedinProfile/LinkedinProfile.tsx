@@ -18,7 +18,7 @@ const LinkedinProfile = () => {
       name="linkedin-profile"
       onClick={handleLinkedinProfile}
       sx={{
-        position: "absolute",
+        position: "fixed",
         top: "16px",
         left: "16px",
       }}
