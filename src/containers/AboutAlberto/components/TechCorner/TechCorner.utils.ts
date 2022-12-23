@@ -3,6 +3,10 @@ import reactIcon from "../../../../assets/tech/react.png";
 import scssIcon from "../../../../assets/tech/sass.png";
 import reduxIcon from "../../../../assets/tech/redux.png";
 import typescriptIcon from "../../../../assets/tech/typescript.png";
+import muiIcon from "../../../../assets/tech/mui.png";
+import d3Icon from "../../../../assets/tech/d3.png";
+import lodashIcon from "../../../../assets/tech/lodash.png";
+import ramdaIcon from "../../../../assets/tech/ramda.png";
 import vars from "../../../../styles/variables.scss";
 import { SxProps, Theme } from "@mui/material";
 
@@ -23,6 +27,10 @@ export const technologyStack: TechnologyStack[] = [
     techUrl: "https://www.typescriptlang.org/",
   },
   { techName: "Sass", techIcon: scssIcon, techUrl: "https://sass-lang.com/" },
+  { techName: "Material-UI", techIcon: muiIcon, techUrl: "https://mui.com/" },
+  { techName: "D3.js", techIcon: d3Icon, techUrl: "https://d3js.org/" },
+  { techName: "Lodash", techIcon: lodashIcon, techUrl: "https://lodash.com/" },
+  { techName: "Ramda", techIcon: ramdaIcon, techUrl: "https://ramdajs.com/" },
 ];
 
 export const getTechTitleStyle = (isDarkTheme: boolean): SxProps<Theme> => {

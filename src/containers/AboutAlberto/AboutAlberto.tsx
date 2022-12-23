@@ -5,18 +5,21 @@ import BackNavButton from "../../components/BackNavButton/BackNavButton";
 import { setTheme } from "../../store/sessionSlice/sessionSlice";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
 import AboutTitle from "./components/AboutTitle/AboutTitle";
+import TechCorner from "./components/TechCorner/TechCorner";
+import { getHeaderStyles } from "./AboutAlberto.utils";
 import { Box, useMediaQuery } from "@mui/material";
+import vars from "../../styles/variables.scss";
 import { useDispatch } from "react-redux";
 import { useEffect, useRef } from "react";
 import "./AboutAlberto.scss";
-import TechCorner from "./components/TechCorner/TechCorner";
 
 const AboutAlberto = () => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
-  const dispatch = useDispatch();
+  const isTablet = useMediaQuery(`(min-width:${vars["breakpoint-md"]})`);
   const profileCardSection = useRef<HTMLDivElement | null>(null);
   const aboutDescriptionSection = useRef<HTMLDivElement | null>(null);
   const techCornerSection = useRef<HTMLDivElement | null>(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (isDarkModeEnabled) {
@@ -33,18 +36,16 @@ const AboutAlberto = () => {
   return (
     <Box className="aboutAlberto">
       <Box className="aboutAlberto_container">
-        <AboutTitle />
-        <LinkedinProfile />
-        <BackNavButton />
+        <Box className="aboutAlberto_container_header" sx={getHeaderStyles(isTablet)}>
+          <AboutTitle />
+          <LinkedinProfile />
+          <BackNavButton />
+        </Box>
         <div ref={profileCardSection}>
-          <ProfileCard
-            goToSection={aboutDescriptionSection}
-          />
+          <ProfileCard goToSection={aboutDescriptionSection} />
         </div>
         <div ref={aboutDescriptionSection}>
-          <AboutDescription
-            goToSection={techCornerSection}
-          />
+          <AboutDescription goToSection={techCornerSection} />
         </div>
         <div ref={techCornerSection}>
           <TechCorner />
