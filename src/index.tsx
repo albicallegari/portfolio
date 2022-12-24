@@ -19,7 +19,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename={process.env.REACT_APP_WEB_BASE_URL || "/"}>
+      <BrowserRouter basename="/">
         <AxiosInterceptor store={store}>
           <Routes>
             <Route path="/" element={<Home />} />
