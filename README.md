@@ -1,3 +1,6 @@
+---
+permalink: /index.html
+---
 # Alberto's Portfolio
 Just me while having fun making some stuff
 
