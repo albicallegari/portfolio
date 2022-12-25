@@ -110,15 +110,14 @@
         text-align: center;
         font-family: "bebas neue";
         color: $color-white;
-        font-size: 70px;
+        font-size: 80px;
         text-transform: uppercase;
-        letter-spacing: 12px;
-        width: 303px;
+        letter-spacing: 15px;
+        width: 290px;
         line-height: 4.5rem;
         overflow: hidden;
         @media (min-width: $breakpoint-md) {
           font-size: 100px;
-          letter-spacing: 15px;
           width: 356px;
           line-height: 5.5rem;
         }

@@ -25,7 +25,7 @@ const Home = (): JSX.Element => {
     if (isDarkModeEnabled) {
       dispatch(setTheme("dark"));
     } else dispatch(setTheme("light"));
-    hideLogoOverlay();
+    // hideLogoOverlay();
   }, []);
 
   useEffect(() => {
