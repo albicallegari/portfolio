@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import AxiosInterceptor from "./components/AxiosInterceptor/AxiosInterceptor";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";
@@ -19,7 +19,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename="/">
+      <HashRouter basename="/">
         <AxiosInterceptor store={store}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -41,7 +41,7 @@ root.render(
             />
           </Routes>
         </AxiosInterceptor>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   </React.StrictMode>
 );
