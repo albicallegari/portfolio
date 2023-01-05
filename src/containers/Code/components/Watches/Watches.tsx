@@ -75,6 +75,12 @@ const Watches = () => {
       }}
     >
       <div className="watches_circle">
+        <div
+          className="dots hrs-dot"
+          style={{
+            transform: `rotate(${new Date().getHours() * 30}deg)`,
+          }}
+        ></div>
         <svg>
           <circle cx="70" cy="70" r="70"></circle>
           <circle
@@ -90,9 +96,19 @@ const Watches = () => {
             id="hh"
           ></circle>
         </svg>
-        <div id="hour">{hours}</div>
+        <div id="hour">
+          {hours}
+          <br />
+          <span>Hours</span>
+        </div>
       </div>
       <div className="watches_circle">
+        <div
+          className="dots min-dot"
+          style={{
+            transform: `rotate(${new Date().getMinutes() * 6}deg)`,
+          }}
+        ></div>
         <svg>
           <circle cx="70" cy="70" r="70"></circle>
           <circle
@@ -105,9 +121,19 @@ const Watches = () => {
             id="mm"
           ></circle>
         </svg>
-        <div id="minutes">{minutes}</div>
+        <div id="minutes">
+          {minutes}
+          <br />
+          <span>Minutes</span>
+        </div>
       </div>
       <div className="watches_circle">
+        <div
+          className="dots sec-dot"
+          style={{
+            transform: `rotate(${new Date().getSeconds() * 6}deg)`,
+          }}
+        ></div>
         <svg>
           <circle cx="70" cy="70" r="70"></circle>
           <circle
@@ -120,7 +146,11 @@ const Watches = () => {
             id="ss"
           ></circle>
         </svg>
-        <div id="seconds">{seconds}</div>
+        <div id="seconds">
+          {seconds}
+          <br />
+          <span>Seconds</span>
+        </div>
       </div>
       <div className="watches_ap">
         <div className="ampm">{ampm}</div>
