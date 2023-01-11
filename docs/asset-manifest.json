@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/react-portfolio/static/css/main.9ffcfdaf.css",
-    "main.js": "/react-portfolio/static/js/main.0df996a1.js",
+    "main.js": "/react-portfolio/static/js/main.cc8e2338.js",
     "static/css/84.f993a411.chunk.css": "/react-portfolio/static/css/84.f993a411.chunk.css",
     "static/js/84.95c491e5.chunk.js": "/react-portfolio/static/js/84.95c491e5.chunk.js",
-    "static/css/143.18b291a3.chunk.css": "/react-portfolio/static/css/143.18b291a3.chunk.css",
+    "static/css/143.ec0d6f7e.chunk.css": "/react-portfolio/static/css/143.ec0d6f7e.chunk.css",
     "static/js/143.de54c8b1.chunk.js": "/react-portfolio/static/js/143.de54c8b1.chunk.js",
     "static/css/639.44a555c7.chunk.css": "/react-portfolio/static/css/639.44a555c7.chunk.css",
     "static/js/639.cd019f2b.chunk.js": "/react-portfolio/static/js/639.cd019f2b.chunk.js",
@@ -25,10 +25,10 @@
     "static/media/d3.png": "/react-portfolio/static/media/d3.0e0a7c55c8b6b1070b7e.png",
     "index.html": "/react-portfolio/index.html",
     "main.9ffcfdaf.css.map": "/react-portfolio/static/css/main.9ffcfdaf.css.map",
-    "main.0df996a1.js.map": "/react-portfolio/static/js/main.0df996a1.js.map",
+    "main.cc8e2338.js.map": "/react-portfolio/static/js/main.cc8e2338.js.map",
     "84.f993a411.chunk.css.map": "/react-portfolio/static/css/84.f993a411.chunk.css.map",
     "84.95c491e5.chunk.js.map": "/react-portfolio/static/js/84.95c491e5.chunk.js.map",
-    "143.18b291a3.chunk.css.map": "/react-portfolio/static/css/143.18b291a3.chunk.css.map",
+    "143.ec0d6f7e.chunk.css.map": "/react-portfolio/static/css/143.ec0d6f7e.chunk.css.map",
     "143.de54c8b1.chunk.js.map": "/react-portfolio/static/js/143.de54c8b1.chunk.js.map",
     "639.44a555c7.chunk.css.map": "/react-portfolio/static/css/639.44a555c7.chunk.css.map",
     "639.cd019f2b.chunk.js.map": "/react-portfolio/static/js/639.cd019f2b.chunk.js.map",
@@ -40,6 +40,6 @@
   },
   "entrypoints": [
     "static/css/main.9ffcfdaf.css",
-    "static/js/main.0df996a1.js"
+    "static/js/main.cc8e2338.js"
   ]
 }
