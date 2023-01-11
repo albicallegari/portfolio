@@ -6,6 +6,7 @@ import { Box, Button, useMediaQuery } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.scss";
 
 const Home = (): JSX.Element => {
@@ -14,6 +15,7 @@ const Home = (): JSX.Element => {
     (state: RootState) => state.session
   );
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [isIntroVisible, setIsIntroVisible] = useState(true);
 
@@ -57,7 +59,7 @@ const Home = (): JSX.Element => {
             fontFamily: "Nunito, sans-serif",
           }}
           className="home_container_linkTo_upsx"
-          onClick={() => (window.location.href = "/react-portfolio/about-alberto")}
+          onClick={() => navigate("/about-alberto")}
         >
           {getTranslatedLabel("global.aboutAlb")}
         </Button>
@@ -68,7 +70,7 @@ const Home = (): JSX.Element => {
             fontFamily: "Nunito, sans-serif",
           }}
           className="home_container_linkTo_updx"
-          onClick={() => (window.location.href = "/react-portfolio/about-code")}
+          onClick={() => navigate("/about-code")}
         >
           {getTranslatedLabel("global.aboutCode")}
         </Button>
