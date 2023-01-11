@@ -123,6 +123,29 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
     }
   };
 
+  const getColorsRange = (v: number) => {
+    const { minValue, maxValue } = _this.current;
+    if (v < 0) {
+      const color = scaleLinear()
+        .domain([minValue, 0])
+        .interpolate(interpolateHcl as any)
+        .range(["#fc0000", "#f7cbcb"] as any) as unknown as ScaleLinear<
+        number,
+        string
+      >;
+      return color(v);
+    } else {
+      const color = scaleLinear()
+        .domain([0, maxValue])
+        .interpolate(interpolateHcl as any)
+        .range(["#b3e8bc", "#02db26"] as any) as unknown as ScaleLinear<
+        number,
+        string
+      >;
+      return color(v);
+    }
+  };
+
   const formatName = (name: string) => {
     if (!isNullOrEmpty(name.split(" ")[1])) {
       return `${name.split(" ")[0]} ${name.split(" ")[1].charAt(0)}`;
@@ -177,7 +200,7 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
     const color = scaleLinear()
       .domain([minValue, maxValue])
       .interpolate(interpolateHcl as any)
-      .range(["#db8fae", "#e70060"] as any) as unknown as ScaleLinear<
+      .range(["#fc0000", "#02db26"] as any) as unknown as ScaleLinear<
       number,
       string
     >;
@@ -222,9 +245,9 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
         >
           <circle
             r={radiusScale(item.v)}
-            fill={color(item.v)}
+            fill={getColorsRange(item.v)}
             fillOpacity="0.2"
-            stroke={rgb(color(item.v)).toString()}
+            stroke={rgb(getColorsRange(item.v)).toString()}
             strokeWidth="2"
           />
           {fontSize <= 22 && (
@@ -271,7 +294,10 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
   };
 
   return visibilityState || !data.length ? (
-    <Loader containerStyle={{ width: containerWidth, height: containerHeight }} size={SizeLoader.LARGE} />
+    <Loader
+      containerStyle={{ width: containerWidth, height: containerHeight }}
+      size={SizeLoader.LARGE}
+    />
   ) : (
     <svg width={containerWidth} height={containerHeight}>
       {renderBubbles(data)}
