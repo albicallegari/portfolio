@@ -1,6 +1,6 @@
 {
-  "name": "react",
-  "homepage": "https://albicallegari.github.io/react",
+  "name": "portfolio",
+  "homepage": "https://albicallegari.github.io/portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
