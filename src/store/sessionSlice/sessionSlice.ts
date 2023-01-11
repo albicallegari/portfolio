@@ -7,16 +7,21 @@ const sessionSlice = createSlice({
   name: SESSION_STORAGE_KEY,
   initialState: {
     theme: 'light',
+    introDisplayed: false,
   } as ThemeSessionState,
   reducers: {
     setTheme: (state: ThemeSessionState, action: PayloadAction<'light' | 'dark'>) => ({
       ...state,
       theme: action.payload,
     }),
+    setIntroDisplayed: (state: ThemeSessionState, action: PayloadAction<boolean>) => ({
+      ...state,
+      introDisplayed: action.payload,
+    }),
   },
 });
 
-export const { setTheme } = sessionSlice.actions;
+export const { setTheme, setIntroDisplayed } = sessionSlice.actions;
 
 export const persistedSessionSlice = persistReducer(
   {

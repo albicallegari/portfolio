@@ -1,26 +1,24 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import BloodsuckerAnimation from "../../components/BloodsuckerAnimation/BloodsuckerAnimation";
-import { setTheme } from "../../store/sessionSlice/sessionSlice";
+import { setIntroDisplayed, setTheme } from "../../store/sessionSlice/sessionSlice";
 import { getTranslatedLabel } from "../../common/labels/utils";
 import { Box, Button, useMediaQuery } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.scss";
 
 const Home = (): JSX.Element => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
-  const { theme: themeState } = useSelector(
+  const { theme: themeState, introDisplayed } = useSelector(
     (state: RootState) => state.session
   );
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [isIntroVisible, setIsIntroVisible] = useState(true);
-
   const hideLogoOverlay = () => {
-    setTimeout(() => setIsIntroVisible(false), 2500);
+    setTimeout(() => dispatch(setIntroDisplayed(true)), 2500);
   };
 
   useEffect(() => {
@@ -38,7 +36,7 @@ const Home = (): JSX.Element => {
 
   return (
     <Box className="home">
-      {isIntroVisible && (
+      {!introDisplayed && (
         <div className="home_overlay">
           <div className="home_overlay_container">
             <div className="home_overlay_container_a">

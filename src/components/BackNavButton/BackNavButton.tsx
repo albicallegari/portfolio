@@ -16,7 +16,7 @@ const BackNavButton = ({ top, bottom, right, left }: BackNavButtonProps) => {
     <IconButton
       aria-label="go-back"
       name="go-back"
-      onClick={() => navigate(-1)}
+      onClick={() => navigate("/")}
       sx={{ 
         position: "fixed", 
         ...(!(top || bottom) && {top: "16px"}), 

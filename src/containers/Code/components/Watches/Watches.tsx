@@ -65,7 +65,7 @@ const Watches = () => {
           : percentage(84, windowWidth as number),
         height: isTablet
           ? percentage(85, windowHeight as number)
-          : percentage(75, windowHeight as number),
+          : 'none',
         boxSizing: "border-box",
         display: "flex",
         flexDirection: isTablet ? "row" : "column",

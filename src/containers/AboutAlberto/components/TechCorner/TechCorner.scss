@@ -6,6 +6,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 50px;
+  @media (min-width: $breakpoint-md) {
+    padding-bottom: 0px;
+  }
   &_grid {
     width: 80%;
     height: 70vh;

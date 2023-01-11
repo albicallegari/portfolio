@@ -2,6 +2,7 @@
 import { PersistConfig as BasePersistConfig } from 'redux-persist';
 export interface ThemeSessionState {
   theme: 'dark' | 'light';
+  introDisplayed: boolean;
 }
 
 export interface PersistConfig extends Omit<BasePersistConfig<ThemeSessionState>, 'serialize'> {
