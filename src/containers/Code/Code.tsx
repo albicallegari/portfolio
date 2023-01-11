@@ -70,10 +70,6 @@ const Code = () => {
                 value={CodeProejects.WATCHES}
                 label={getTranslatedLabel("global.watches")}
               />
-              <Tab
-                value={CodeProejects.TEST}
-                label={getTranslatedLabel("global.test")}
-              />
             </Tabs>
           </Box>
           <Box>
