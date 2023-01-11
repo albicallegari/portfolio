@@ -57,7 +57,7 @@ const Home = (): JSX.Element => {
             fontFamily: "Nunito, sans-serif",
           }}
           className="home_container_linkTo_upsx"
-          onClick={() => (window.location.href = "/about-alberto")}
+          onClick={() => (window.location.href = "/react-portfolio/about-alberto")}
         >
           {getTranslatedLabel("global.aboutAlb")}
         </Button>
@@ -68,7 +68,7 @@ const Home = (): JSX.Element => {
             fontFamily: "Nunito, sans-serif",
           }}
           className="home_container_linkTo_updx"
-          onClick={() => (window.location.href = "/about-code")}
+          onClick={() => (window.location.href = "/react-portfolio/about-code")}
         >
           {getTranslatedLabel("global.aboutCode")}
         </Button>

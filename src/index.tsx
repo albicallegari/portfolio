@@ -19,7 +19,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename="/">
+      <BrowserRouter basename="/react-portfolio">
         <AxiosInterceptor store={store}>
           <Routes>
             <Route path="/" element={<Home />} />
