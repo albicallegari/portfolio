@@ -91,13 +91,6 @@ const Code = () => {
             >
               <Watches />
             </TabPanel>
-            <TabPanel
-              value={CodeProejects.TEST}
-              index={CodeProejects.TEST}
-              selectedTab={tabSelected}
-            >
-              <p>TEST-TEST-TEST-TEST-TEST</p>
-            </TabPanel>
           </Box>
         </Box>
       </Box>
