@@ -19,8 +19,8 @@ const TechCorner = () => {
         {getTranslatedLabel("aboutAlberto.techCorner.title")}
       </Typography>
       <Box className="techCorner_grid">
-        {technologyStack.map((tech) => (
-          <Box sx={getTechBoxStyle()}>
+        {technologyStack.map((tech, i) => (
+          <Box key={i} sx={getTechBoxStyle()}>
             <img
               className="techCorner_grid_techIcon"
               onClick={() => window.open(tech.techUrl)}

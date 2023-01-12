@@ -21,15 +21,21 @@ const AboutDescription = ({ goToSection }: AboutDescriptionProps) => {
   const boxList = [
     {
       backgroundColor: "#20a7d8",
-      label: getTranslatedLabel("aboutAlberto.profileCard.name"),
+      label: isTablet
+        ? getTranslatedLabel("aboutAlberto.profileCard.fullName")
+        : getTranslatedLabel("aboutAlberto.profileCard.name"),
     },
     {
       backgroundColor: "#CD921E",
-      label: getTranslatedLabel("aboutAlberto.aboutDescription.feDev"),
+      label: isTablet
+        ? getTranslatedLabel("aboutAlberto.aboutDescription.feDev")
+        : getTranslatedLabel("aboutAlberto.profileCard.secondRole"),
     },
     {
       backgroundColor: "#c10528",
-      label: getTranslatedLabel("aboutAlberto.aboutDescription.swEng"),
+      label: isTablet
+        ? getTranslatedLabel("aboutAlberto.aboutDescription.swEng")
+        : getTranslatedLabel("aboutAlberto.aboutDescription.swEngMobile"),
     },
   ];
 
@@ -48,15 +54,16 @@ const AboutDescription = ({ goToSection }: AboutDescriptionProps) => {
       }}
     >
       <div className="aboutDescription_textAnimation">
-        <p>Hello 👋 I'm</p>
+        <p>{getTranslatedLabel("aboutAlberto.aboutDescription.title")}</p>
         <div className="aboutDescription_textAnimation_animation">
-          {boxList.map((b) => (
+          {boxList.map((b, i) => (
             <Box
+              key={i}
               ref={descRef}
               sx={{
                 backgroundColor: b.backgroundColor,
                 textAlign: "center",
-                width: "fit-content",
+                width: isTablet ? "fit-content" : "100%",
               }}
             >
               {b.label}
