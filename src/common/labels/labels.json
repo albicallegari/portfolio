@@ -35,5 +35,8 @@
   "aboutCode": {
     "title": "I'm collecting some",
     "code": "{code}"
+  },
+  "bloodsucker": {
+    "desc": "Bloodsucker was born in 2015 in a small apartment in Udine, designed and created by Alberto Callegari."
   }
 }
