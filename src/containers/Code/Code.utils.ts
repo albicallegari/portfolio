@@ -8,7 +8,7 @@ export const getWrapperBoxConfig = (isTablet: boolean) => {
 };
 export const getTabsConfig = (themeState: string) => {
   return {
-    maxWidth: "200px",
+    // maxWidth: "200px",
     ".MuiTab-root": {
       color: themeState === "dark" ? "white" : "black",
       textTransform: "capitalize",

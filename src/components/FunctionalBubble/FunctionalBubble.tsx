@@ -68,6 +68,7 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
   const isDarkTheme = useSelector(
     (state: RootState) => state.session.theme === "dark"
   );
+  const isDesktop = useMediaQuery(`(min-width:${vars["breakpoint-lg"]})`);
   const isTablet = useMediaQuery(`(min-width:${vars["breakpoint-md"]})`);
   const isSPhone = useMediaQuery(`(max-width:${vars["breakpoint-sm"]})`);
   const [containerWidth, setContainerWidth] = useState(600);
@@ -80,8 +81,11 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
     if (width && height) {
       setContainerWidth(width);
       setContainerHeight(height);
-    } else if (isTablet) {
+    } else if (isDesktop) {
       setContainerWidth(percentage(85, windowWidth as number));
+      setContainerHeight(percentage(85, windowHeight as number));
+    } else if (isTablet && !isDesktop) {
+      setContainerWidth(percentage(80, windowWidth as number));
       setContainerHeight(percentage(85, windowHeight as number));
     } else if (!isSPhone && !isTablet) {
       setContainerWidth(400);
