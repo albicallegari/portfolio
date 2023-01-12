@@ -14,6 +14,7 @@ import { CodeProejects } from "./Code.models";
 import { useEffect, useState } from "react";
 import { RootState } from "../../store";
 import "./Code.scss";
+import WordClock from "./components/WordClock/WordClock";
 
 const Code = () => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
@@ -70,9 +71,13 @@ const Code = () => {
                 value={CodeProejects.WATCHES}
                 label={getTranslatedLabel("global.watches")}
               />
+              <Tab
+                value={CodeProejects.WORD_CLOCK}
+                label={getTranslatedLabel("global.wordClock")}
+              />
             </Tabs>
           </Box>
-          <Box>
+          <Box sx={{ width: '100%' }}>
             <TabPanel
               value={CodeProejects.BUBBLE_CHART}
               index={CodeProejects.BUBBLE_CHART}
@@ -86,6 +91,13 @@ const Code = () => {
               selectedTab={tabSelected}
             >
               <Watches />
+            </TabPanel>
+            <TabPanel
+              value={CodeProejects.WORD_CLOCK}
+              index={CodeProejects.WORD_CLOCK}
+              selectedTab={tabSelected}
+            >
+              <WordClock />
             </TabPanel>
           </Box>
         </Box>
