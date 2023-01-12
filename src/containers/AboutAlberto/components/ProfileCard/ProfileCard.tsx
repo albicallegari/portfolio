@@ -1,4 +1,4 @@
-import profileImg from "../../../../assets/me.jpg";
+import profileImg from "../../../../assets/me.png";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import "./ProfileCard.scss";
 import generateClassName from "../../../../utils/generateClassName";
@@ -54,7 +54,7 @@ const ProfileCard = ({ goToSection }: ProfileCardProps): JSX.Element => {
               fontWeight: 700,
             }}
           >
-            {getTranslatedLabel("aboutAlberto.profileCard.name")}
+            {getTranslatedLabel("aboutAlberto.profileCard.fullName")}
           </Typography>
           <Typography
             sx={{

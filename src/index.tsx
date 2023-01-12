@@ -1,11 +1,12 @@
+import AxiosInterceptor from "./components/AxiosInterceptor/AxiosInterceptor";
+import Bloodsucker from "./containers/Bloodsucker/Bloodsucker";
+import { Routes, Route, HashRouter } from "react-router-dom";
+import reportWebVitals from "./reportWebVitals";
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import { Routes, Route, HashRouter } from "react-router-dom";
-import AxiosInterceptor from "./components/AxiosInterceptor/AxiosInterceptor";
-import reportWebVitals from "./reportWebVitals";
-import store from "./store";
 import "./styles/index.scss";
+import store from "./store";
 
 const Home = lazy(() => import("./containers/Home/Home"));
 const AboutAlberto = lazy(
@@ -36,6 +37,14 @@ root.render(
               element={
                 <Suspense>
                   <Code />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/bloodsucker"
+              element={
+                <Suspense>
+                  <Bloodsucker />
                 </Suspense>
               }
             />

@@ -72,6 +72,17 @@ const Home = (): JSX.Element => {
         >
           {getTranslatedLabel("global.aboutCode")}
         </Button>
+        <Button
+          sx={{
+            color: themeState === "dark" ? "white" : "black",
+            fontSize: "1rem",
+            fontFamily: "Nunito, sans-serif",
+          }}
+          className="home_container_linkTo_dwdx"
+          onClick={() => navigate("/bloodsucker")}
+        >
+          {getTranslatedLabel("global.bloodsucker")}
+        </Button>
       </Box>
     </Box>
   );

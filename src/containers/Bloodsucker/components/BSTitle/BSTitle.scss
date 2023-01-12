@@ -1,0 +1,10 @@
+@import "../../../../styles/constants.scss";
+@import "../../../../styles/mixin.scss";
+
+.bsTitle {
+  &_img {
+    @media (min-width: $breakpoint-md) {
+      width: 450px;
+    }
+  }
+}
