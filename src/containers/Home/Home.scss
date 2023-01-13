@@ -4,6 +4,7 @@
 .home {
   width: 100vw;
   height: 100vh;
+  box-sizing: border-box;
   background-color: $color-white;
   color: $color-black;
   @media (prefers-color-scheme: dark) {
@@ -127,6 +128,7 @@
   &_container {
     height: 100%;
     position: relative;
+    box-sizing: border-box;
     &_linkTo_upsx,
     &_linkTo_updx,
     &_linkTo_dwsx,
