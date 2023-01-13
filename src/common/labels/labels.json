@@ -37,6 +37,10 @@
     "code": "{code}"
   },
   "bloodsucker": {
-    "desc": "Bloodsucker was born in 2015 in a small apartment in Udine, designed and created by Alberto Callegari."
+    "desc": "Bloodsucker was born in 2015 in a small apartment in Udine, designed and created by Alberto Callegari.",
+    "item": {
+      "availableSizes": "Available sizes:",
+      "color": "Color:"
+    }
   }
 }

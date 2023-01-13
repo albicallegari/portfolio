@@ -60,16 +60,13 @@ const Watches = () => {
     <Box
       className="watches"
       sx={{
-        width: isTablet
-          ? percentage(85, windowWidth as number)
-          : percentage(84, windowWidth as number),
-        height: isTablet
-          ? percentage(85, windowHeight as number)
-          : 'none',
+        width: isTablet ? percentage(85, windowWidth as number) : "unset",
+        height: isTablet ? percentage(85, windowHeight as number) : "unset",
         boxSizing: "border-box",
         display: "flex",
+        flexWrap: "wrap",
         flexDirection: isTablet ? "row" : "column",
-        gap: "40px",
+        gap: isTablet ? "40px" : "20px",
         justifyContent: "center",
         alignItems: "center",
       }}
@@ -152,9 +149,11 @@ const Watches = () => {
           <span>Seconds</span>
         </div>
       </div>
-      <div className="watches_ap">
-        <div className="ampm">{ampm}</div>
-      </div>
+      {isTablet && (
+        <div className="watches_ap">
+          <div className="ampm">{ampm}</div>
+        </div>
+      )}
     </Box>
   );
 };
