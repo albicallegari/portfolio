@@ -4,6 +4,7 @@
 .home {
   width: 100vw;
   height: 100vh;
+  max-height: -webkit-fill-available;
   box-sizing: border-box;
   background-color: $color-white;
   color: $color-black;
