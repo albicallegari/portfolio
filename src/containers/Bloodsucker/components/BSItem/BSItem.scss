@@ -2,6 +2,7 @@
 @import "../../../../styles/mixin.scss";
 
 .bsItem {
+  position: relative;
   img {
     width: 100%;
   }
@@ -13,12 +14,22 @@
       align-items: center;
       gap: 8px;
       p {
-        margin-top: 8px;
-        margin-bottom: 8px;
+        margin-top: 5px;
+        margin-bottom: 5px;
       }
       &_label {
         font-weight: 700;
       }
     }
+  }
+}
+
+.verticalWrap {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
   }
 }

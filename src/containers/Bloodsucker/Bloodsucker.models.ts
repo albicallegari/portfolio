@@ -7,6 +7,7 @@ export interface BloodsuckerItem {
 
 export interface ItemColor {
   code: string;
+  cCode: string;
   label: string;
   imgs: string[];
 }

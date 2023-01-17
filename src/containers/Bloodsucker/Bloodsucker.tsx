@@ -24,8 +24,8 @@ const Bloodsucker = () => {
           <BackNavButton />
         </Box>
         <div className="bloodsucker_container_wrapper">
-          {itemsList?.map((item) => (
-            <BSItem item={item} />
+          {itemsList?.map((item, i) => (
+            <BSItem key={`${item.name}-${i}`} item={item} />
           ))}
         </div>
       </div>
