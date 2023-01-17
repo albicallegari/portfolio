@@ -63,6 +63,7 @@ const BSItem = ({ item }: BSItemProps): JSX.Element => {
             top: isTablet ? "168px" : "80px",
             left: isTablet ? "10px" : "0px",
             color: "black",
+            cursor: 'pointer'
           }}
         />
       )}
@@ -76,6 +77,7 @@ const BSItem = ({ item }: BSItemProps): JSX.Element => {
               top: isTablet ? "168px" : "80px",
               left: isTablet ? "295px" : "160px",
               color: "black",
+              cursor: 'pointer'
             }}
           />
         )}
