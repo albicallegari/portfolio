@@ -61,7 +61,7 @@ const BSItem = ({ item }: BSItemProps): JSX.Element => {
           sx={{
             position: "absolute",
             top: isTablet ? "168px" : "80px",
-            left: isTablet ? "35px" : "0px",
+            left: isTablet ? "10px" : "0px",
             color: "black",
           }}
         />
