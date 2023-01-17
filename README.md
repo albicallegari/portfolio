@@ -1,10 +1,10 @@
 # Alberto's Portfolio
 Just me while having fun making some stuff
-## About Alberto 
+### About Alberto 
 just some info about me and my job role.
-## Code
+### Code
 a collections of code snippets
-## Bloodsucker
+### Bloodsucker
 Bloodsucker is a logo I created in 2015 and it's accompanying me everywhere. I've created t-shirts, hats, stickers, NFTs... a lot of stuff! It's not a real e-commerce but it would like to become one, a tiny online shop not for profit but to integrate and test new web technologies in the e-commerce field.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and react 18.2.0.
