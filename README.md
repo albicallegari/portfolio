@@ -1,5 +1,11 @@
 # Alberto's Portfolio
 Just me while having fun making some stuff
+## About Alberto 
+just some info about me and my job role.
+## Code
+a collections of code snippets
+## Bloodsucker
+Bloodsucker is a logo I created in 2015 and it's accompanying me everywhere. I've created t-shirts, hats, stickers, NFTs... a lot of stuff! It's not a real e-commerce but it would like to become one, a tiny online shop not for profit but to integrate and test new web technologies in the e-commerce field.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and react 18.2.0.
 
@@ -21,6 +27,10 @@ D3 gives you the full capabilities of modern browsers without tying yourself to 
 
 ### Using [Axios](https://axios-http.com/docs/intro) to fetch data.
 
+## Hooks corner
+### **useGlobalLoader** is a hook that helps you to handle the loader visibility state on redux store
+### **useOnScreen** let you know if an element in in the viewport
+### **useWindowDimension** let you know the size of the viewport width and height
 ## Utils corner
 #### **GenerateClassName** is a simple util that helps you to use classes conditionally.
 #### **IsNotNullOrEmpty** trought *ramda* it helps you to detect if Object is empty or null
