@@ -40,17 +40,20 @@
     justify-content: center;
     &_wrapper {
       margin-top: 175px;
-      padding: 0px 16px 100px 16px;
+      padding: 0px 16px 0px 16px;
       position: relative;
       box-sizing: border-box;
       display: grid;
       grid-column-gap: 24px;
       grid-row-gap: 24px;
       grid-template-columns: auto auto;
-      @media (min-width: $breakpoint-md) {
+      overflow-y: auto;
+      @media (min-width: $breakpoint-lg) {
         max-width: 1024px;
         margin-top: 250px;
+        padding: 0px 40px 0px 0px;
         grid-template-columns: 33% 33% 33%;
+        overflow-y: unset;
       }
     }
   }
