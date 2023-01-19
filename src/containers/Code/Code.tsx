@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import { RootState } from "../../store";
 import "./Code.scss";
 import WordClock from "./components/WordClock/WordClock";
+import ThreeJs from "./components/ThreeJs/ThreeJs";
 
 const Code = () => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
@@ -58,6 +59,7 @@ const Code = () => {
           <Box>
             <Tabs
               sx={getTabsConfig(themeState)}
+              variant={isTablet ? "standard" : "scrollable"}
               value={tabSelected}
               onChange={handleChange}
               aria-label="tab dettaglio elemento"
@@ -74,6 +76,10 @@ const Code = () => {
               <Tab
                 value={CodeProejects.WORD_CLOCK}
                 label={getTranslatedLabel("global.wordClock")}
+              />
+              <Tab
+                value={CodeProejects.THREE_JS}
+                label={getTranslatedLabel("global.threeJs")}
               />
             </Tabs>
           </Box>
@@ -98,6 +104,13 @@ const Code = () => {
               selectedTab={tabSelected}
             >
               <WordClock />
+            </TabPanel>
+            <TabPanel
+              value={CodeProejects.THREE_JS}
+              index={CodeProejects.THREE_JS}
+              selectedTab={tabSelected}
+            >
+              <ThreeJs />
             </TabPanel>
           </Box>
         </Box>
