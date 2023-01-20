@@ -32,7 +32,7 @@ const ThreeJs = () => {
   return (
     <>
       <Box sx={{ textAlign: "center" }}>
-        <p>Trying Three.JS</p>
+        <p>Trying React-Three.JS</p>
       </Box>
       <Canvas>
         <ambientLight />
