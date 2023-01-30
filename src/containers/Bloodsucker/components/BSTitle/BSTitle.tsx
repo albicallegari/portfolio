@@ -10,6 +10,7 @@ const BSTitle = () => {
   return (
     <Box
       className="bsTitle"
+      component="div"
       sx={{
         display: "flex",
         flexDirection: isTablet ? "row" : "column",

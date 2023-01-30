@@ -19,7 +19,7 @@ const Bloodsucker = () => {
   return (
     <div className="bloodsucker">
       <div className="bloodsucker_container">
-        <Box className="bloodsucker_container_header" sx={getHeaderStyles()}>
+        <Box className="bloodsucker_container_header" sx={getHeaderStyles()} component="div">
           <BSTitle />
           <BackNavButton />
         </Box>

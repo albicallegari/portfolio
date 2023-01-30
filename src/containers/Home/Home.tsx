@@ -1,6 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import BloodsuckerAnimation from "../../components/BloodsuckerAnimation/BloodsuckerAnimation";
-import { setIntroDisplayed, setTheme } from "../../store/sessionSlice/sessionSlice";
+import {
+  setIntroDisplayed,
+  setTheme,
+} from "../../store/sessionSlice/sessionSlice";
 import { getTranslatedLabel } from "../../common/labels/utils";
 import { Box, Button, useMediaQuery } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
@@ -35,7 +38,7 @@ const Home = (): JSX.Element => {
   }, [isDarkModeEnabled]);
 
   return (
-    <Box className="home">
+    <Box className="home" component="div">
       {!introDisplayed && (
         <div className="home_overlay">
           <div className="home_overlay_container">
@@ -48,7 +51,7 @@ const Home = (): JSX.Element => {
           </div>
         </div>
       )}
-      <Box className="home_container">
+      <Box className="home_container" component="div">
         <BloodsuckerAnimation theme={themeState} />
         <Button
           sx={{

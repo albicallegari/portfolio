@@ -3,4 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  &_canvas {
+    height: 80vh !important;
+  }
 }
