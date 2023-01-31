@@ -63,7 +63,7 @@ const BSItem = ({ item }: BSItemProps): JSX.Element => {
             top: isTablet ? "168px" : "80px",
             left: isTablet ? "10px" : "0px",
             color: "black",
-            cursor: 'pointer'
+            cursor: "pointer",
           }}
         />
       )}
@@ -77,7 +77,7 @@ const BSItem = ({ item }: BSItemProps): JSX.Element => {
               top: isTablet ? "168px" : "80px",
               left: isTablet ? "295px" : "160px",
               color: "black",
-              cursor: 'pointer'
+              cursor: "pointer",
             }}
           />
         )}
@@ -99,6 +99,7 @@ const BSItem = ({ item }: BSItemProps): JSX.Element => {
             <p>{getTranslatedLabel("bloodsucker.item.color")}</p>
             {item.colors?.map((c, index) => (
               <Box
+                component="div"
                 key={index}
                 sx={{
                   width: "10px",

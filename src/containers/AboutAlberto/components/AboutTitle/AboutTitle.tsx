@@ -30,6 +30,7 @@ const AboutTitle = () => {
         top: "16px",
         left: "calc(50% - 120px)",
       }}
+      component="div"
     >
       <Typography
         variant="h1"

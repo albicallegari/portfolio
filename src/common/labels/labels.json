@@ -7,7 +7,8 @@
     "watches": "Watches",
     "threeJs": "Three JS",
     "wordClock": "Word clock",
-    "test": "TEST"
+    "test": "TEST",
+    "nextjsUrl": "https://albicallegari-nextjs.vercel.app/"
   },
   "aboutAlberto": {
     "title": "Who i am?",
@@ -26,8 +27,10 @@
       "feDev": "Front-end developer",
       "swEng": "Software developer Engineer",
       "swEngMobile": "SW Engineer",
-      "aboutDesc": "In my academic experience I have attended several courses in computer science and software engineering always trying to keep myself updated and learn new things. In my work experience instead I practiced the entire software lifecycle, from requirements discussions with customers to UI and UX analysis and processing with the design team to software distribution and maintenance. I have collaborated on interesting projects for big clients in Italy where I have learned a lot, I love my job day by day. I worked with many technologies, from simple landing pages with simple html, css and javascript to single page application using frameworks like React.js or Angular and I have had experiences with CMS such as Magnolia CMS, Open CMS, Wordpress and Adobe Experience Manager. Right now I'm using React/Typescript, Node, Html, SASS (CSS), React.js or Angular as Frontend Framework, i also used in the past some html template engines like Pug/Jade to make the html templates building faster.",
-      "aboutDesc2": "This react project is meant to be a set of components that I have made over time."
+      "aboutDesc": "FE developer with BE skills. I work in the entire software lifecycle, from requirements discussions with customers to UI and UX analysis and processing up to the release and maintenance. I have strong knowledge of html, css and javascript/Typescript, java and I work with single page applications frameworks. My basic tech stack includes React.js/Next.js + Typescript, Node, Redux Toolkit or AngularJS but in the past i used also some html template engines like Pug / Jade. I have experiences with CMS integrations such as Magnolia CMS, Open CMS, Wordpress and Adobe Experience Manager, working with Docker and CI/CD deployment (Gitlab), data visualization tools (D3.js or others), and using maps (Google Maps API).",
+      "aboutDesc2": "This react project is meant to be a set of components that I have made over time.",
+      "checkout": "Check out my Work in progress ",
+      "nextjs": "Next.js project"
     },
     "techCorner": {
       "title": "Tech-corner"

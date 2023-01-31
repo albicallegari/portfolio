@@ -34,9 +34,13 @@ const AboutAlberto = () => {
   }, [isDarkModeEnabled]);
 
   return (
-    <Box className="aboutAlberto">
-      <Box className="aboutAlberto_container">
-        <Box className="aboutAlberto_container_header" sx={getHeaderStyles(isTablet)}>
+    <Box className="aboutAlberto" component="div">
+      <Box className="aboutAlberto_container" component="div">
+        <Box
+          className="aboutAlberto_container_header"
+          sx={getHeaderStyles(isTablet)}
+          component="div"
+        >
           <AboutTitle />
           <LinkedinProfile />
           <BackNavButton />

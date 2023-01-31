@@ -42,6 +42,12 @@
       animation: text-animation 8s infinite;
     }
   }
+  &_extLink {
+    color: black;
+    @media (prefers-color-scheme: dark) {
+      color: #e5e5e5;
+    }
+  }
 }
 
 @keyframes text-animation {

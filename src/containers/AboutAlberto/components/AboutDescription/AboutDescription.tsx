@@ -41,6 +41,7 @@ const AboutDescription = ({ goToSection }: AboutDescriptionProps) => {
 
   return (
     <Box
+      component="div"
       className="aboutDescription"
       id="about-description"
       sx={{
@@ -58,6 +59,7 @@ const AboutDescription = ({ goToSection }: AboutDescriptionProps) => {
         <div className="aboutDescription_textAnimation_animation">
           {boxList.map((b, i) => (
             <Box
+              component="div"
               key={i}
               ref={descRef}
               sx={{
@@ -95,6 +97,21 @@ const AboutDescription = ({ goToSection }: AboutDescriptionProps) => {
       >
         {getTranslatedLabel("aboutAlberto.aboutDescription.aboutDesc2")}
       </Typography>
+      <Box
+        component="div"
+        sx={{
+          display: "flex",
+          gap: "5px",
+          alignItems: "center",
+        }}
+      >
+        <p>
+          {getTranslatedLabel("aboutAlberto.aboutDescription.checkout")}
+        </p>
+        <a className="aboutDescription_extLink" href={getTranslatedLabel("global.nextjsUrl")}>
+          {getTranslatedLabel("aboutAlberto.aboutDescription.nextjs")}
+        </a>
+      </Box>
       {isTablet && isVisible && (
         <FloatingScrollButton goToSection={goToSection} />
       )}

@@ -26,10 +26,12 @@ const ProfileCard = ({ goToSection }: ProfileCardProps): JSX.Element => {
       className="profileCard"
       id="profile-card"
       sx={{ width: "100%", height: "100vh" }}
+      component="div"
     >
       <Box
         ref={cardRef}
         className="profileCard_card"
+        component="div"
         sx={{
           display: "flex",
           position: "absolute",
@@ -65,7 +67,7 @@ const ProfileCard = ({ goToSection }: ProfileCardProps): JSX.Element => {
           >
             {getTranslatedLabel("aboutAlberto.profileCard.bDay")}
           </Typography>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Box sx={{ display: "flex", alignItems: "center" }} component="div">
             <PlaceIcon
               sx={{
                 width: "18px",
