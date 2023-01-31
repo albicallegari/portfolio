@@ -8,6 +8,7 @@
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.10.17",
+    "@react-three/cannon": "^6.5.2",
     "@react-three/drei": "^9.54.1",
     "@react-three/fiber": "^8.10.0",
     "@reduxjs/toolkit": "^1.9.1",

@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // import vars from "../../../../styles/variables.scss";
 import { OrbitControls, Stars } from "@react-three/drei";
+import { Physics } from "@react-three/cannon";
 import { Canvas } from "@react-three/fiber";
 import { Box } from "@mui/material";
 import { useRef } from "react";
@@ -9,12 +10,21 @@ import "./ThreeJs.scss";
 const ThreeJs = () => {
   // const isTablet = useMediaQuery(`(min-width:${vars["breakpoint-md"]})`);
   const wrapperRef = useRef<HTMLDivElement>(null);
-
+  
   const BoxThree = () => {
     return (
-      <mesh>
+      <mesh position={[0, 2, 0]}>
         <boxBufferGeometry attach="geometry" />
         <meshLambertMaterial attach="material" color="hotpink" />
+      </mesh>
+    );
+  };
+
+  const Plane = () => {
+    return (
+      <mesh position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeBufferGeometry attach="geometry" args={[100, 100]} />
+        <meshLambertMaterial attach="material" color="lightblue" />
       </mesh>
     );
   };
@@ -26,10 +36,13 @@ const ThreeJs = () => {
       </Box>
       <Canvas className="threeJs_wrapper_canvas">
         <OrbitControls />
-        <ambientLight intensity={0.5}/>
         <Stars />
+        <ambientLight intensity={0.5} />
         <spotLight position={[10, 15, 10]} angle={0.3} />
-        <BoxThree />
+        <Physics>
+          <BoxThree />
+          <Plane />
+        </Physics>
       </Canvas>
     </div>
   );

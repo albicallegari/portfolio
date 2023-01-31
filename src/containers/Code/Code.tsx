@@ -49,14 +49,15 @@ const Code = () => {
   };
 
   return (
-    <Box className="aboutCode">
-      <Box className="aboutCode_container">
+    <Box className="aboutCode" component="div">
+      <Box className="aboutCode_container" component="div">
         <CodeTitle />
         <BackNavButton />
         <Box
           sx={getWrapperBoxConfig(isTablet)}
+          component="div"
         >
-          <Box>
+          <Box component="div">
             <Tabs
               sx={getTabsConfig(themeState)}
               variant={isTablet ? "standard" : "scrollable"}
@@ -83,7 +84,7 @@ const Code = () => {
               />
             </Tabs>
           </Box>
-          <Box sx={{ width: '100%' }}>
+          <Box sx={{ width: '100%' }} component="div">
             <TabPanel
               value={CodeProejects.BUBBLE_CHART}
               index={CodeProejects.BUBBLE_CHART}
