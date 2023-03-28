@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "tdd-game-of-life": "file:./tdd-game-of-life",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.8.4",
@@ -42,7 +43,7 @@
   },
   "scripts": {
     "start": "PORT=3006 react-scripts start",
-    "build": "react-scripts build",
+    "build": "BUILD_PATH='./docs' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

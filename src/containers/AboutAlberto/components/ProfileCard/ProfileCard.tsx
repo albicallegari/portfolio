@@ -10,10 +10,8 @@ import vars from "../../../../styles/variables.scss";
 import FloatingScrollButton from "../../../../components/FloatingScrollButton/FloatingScrollButton";
 import { useRef } from "react";
 import useOnScreen from "../../../../hooks/useOnScreen/useOnScreen";
+import { ProfileCardProps, TextElement } from "./ProfileCard.models";
 
-export interface ProfileCardProps {
-  goToSection: React.MutableRefObject<HTMLDivElement | null>;
-}
 const ProfileCard = ({ goToSection }: ProfileCardProps): JSX.Element => {
   const cardRef = useRef(null);
   const isVisible = useOnScreen(cardRef);
@@ -21,6 +19,26 @@ const ProfileCard = ({ goToSection }: ProfileCardProps): JSX.Element => {
   const isDarkTheme = useSelector(
     (state: RootState) => state.session.theme === "dark"
   );
+
+  const TextElement = ({
+    children,
+    fontSize,
+    fontWeight,
+  }: TextElement): JSX.Element => {
+    return (
+      <Typography
+        sx={{
+          fontFamily: "Nunito, sans-serif",
+          textAlign: "center",
+          fontSize: fontSize,
+          fontWeight: fontWeight || 400,
+        }}
+      >
+        {children}
+      </Typography>
+    );
+  };
+
   return (
     <Box
       className="profileCard"
@@ -48,25 +66,12 @@ const ProfileCard = ({ goToSection }: ProfileCardProps): JSX.Element => {
             profileCard_card_info_darkTheme: isDarkTheme,
           })}
         >
-          <Typography
-            sx={{
-              fontFamily: "Nunito, sans-serif",
-              textAlign: "center",
-              fontSize: "1.5rem",
-              fontWeight: 700,
-            }}
-          >
+          <TextElement fontSize="1.5rem" fontWeight={700}>
             {getTranslatedLabel("aboutAlberto.profileCard.fullName")}
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: "Nunito, sans-serif",
-              textAlign: "center",
-              fontSize: ".8rem",
-            }}
-          >
+          </TextElement>
+          <TextElement fontSize=".8rem">
             {getTranslatedLabel("aboutAlberto.profileCard.bDay")}
-          </Typography>
+          </TextElement>
           <Box sx={{ display: "flex", alignItems: "center" }} component="div">
             <PlaceIcon
               sx={{
@@ -75,35 +80,22 @@ const ProfileCard = ({ goToSection }: ProfileCardProps): JSX.Element => {
                 color: isDarkTheme ? vars["color-black"] : vars["color-white"],
               }}
             />
-            <Typography
-              sx={{
-                fontFamily: "Nunito, sans-serif",
-                textAlign: "center",
-                fontSize: "1rem",
-                fontWeight: 700,
-              }}
-            >
+            <TextElement fontSize="1rem" fontWeight={700}>
               {getTranslatedLabel("aboutAlberto.profileCard.nationality")}
-            </Typography>
+            </TextElement>
           </Box>
-          <Typography
-            sx={{
-              fontFamily: "Nunito, sans-serif",
-              textAlign: "center",
-              fontSize: "1rem",
-            }}
-          >
+          <TextElement fontSize="1rem">
             {getTranslatedLabel("aboutAlberto.profileCard.role")}
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: "Nunito, sans-serif",
-              textAlign: "center",
-              fontSize: ".8rem",
-            }}
-          >
+          </TextElement>
+          <TextElement fontSize=".8rem">
             {getTranslatedLabel("aboutAlberto.profileCard.secondRole")}
-          </Typography>
+          </TextElement>
+          <a
+            href="/pdf/callegari_alberto.pdf"
+            download="Alberto-Callegari-CV.pdf"
+          >
+            Download
+          </a>
         </div>
       </Box>
       {isTablet && isVisible && (
