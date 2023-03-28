@@ -94,7 +94,7 @@ const ProfileCard = ({ goToSection }: ProfileCardProps): JSX.Element => {
             href="/pdf/callegari_alberto.pdf"
             download="Alberto-Callegari-CV.pdf"
           >
-            Download
+            Download the CV
           </a>
         </div>
       </Box>
