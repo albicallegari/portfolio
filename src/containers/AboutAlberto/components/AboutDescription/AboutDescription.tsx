@@ -20,7 +20,7 @@ const AboutDescription = ({ goToSection }: AboutDescriptionProps) => {
   const isTablet = useMediaQuery(`(min-width:${vars["breakpoint-md"]})`);
   const boxList = [
     {
-      backgroundColor: "#20a7d8",
+      backgroundColor: "#0287b8",
       label: isTablet
         ? getTranslatedLabel("aboutAlberto.profileCard.fullName")
         : getTranslatedLabel("aboutAlberto.profileCard.name"),

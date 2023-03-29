@@ -7,7 +7,9 @@ import { Box } from "@mui/material";
 export interface FloatingScrollButtonProps {
   goToSection: React.MutableRefObject<HTMLDivElement | null>;
 }
-const FloatingScrollButton = ({ goToSection }: FloatingScrollButtonProps): JSX.Element => {
+const FloatingScrollButton = ({
+  goToSection,
+}: FloatingScrollButtonProps): JSX.Element => {
   const { theme: themeState } = useSelector(
     (state: RootState) => state.session
   );
@@ -20,8 +22,8 @@ const FloatingScrollButton = ({ goToSection }: FloatingScrollButtonProps): JSX.E
 
   return (
     <Box
-      aria-label="scroll"
       onClick={() => scrollTo(goToSection)}
+      component="div"
       sx={{
         position: "fixed",
         width: "50px",
@@ -32,11 +34,11 @@ const FloatingScrollButton = ({ goToSection }: FloatingScrollButtonProps): JSX.E
         cursor: "pointer",
         textAlign: "center",
         border: `1px solid ${vars["color-white50"]}`,
-        '&:hover': {
-            border: `1px solid ${
-                themeState === "dark" ? vars["color-white"] : vars["color-black"]
-              }`,
-        }
+        "&:hover": {
+          border: `1px solid ${
+            themeState === "dark" ? vars["color-white"] : vars["color-black"]
+          }`,
+        },
       }}
     >
       <KeyboardArrowDownIcon

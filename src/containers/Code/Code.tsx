@@ -51,7 +51,7 @@ const Code = () => {
   return (
     <Box className="aboutCode" component="div">
       <Box className="aboutCode_container" component="div">
-        <CodeTitle />
+        <CodeTitle tabSelected={tabSelected} />
         <BackNavButton />
         <Box
           sx={getWrapperBoxConfig(isTablet)}

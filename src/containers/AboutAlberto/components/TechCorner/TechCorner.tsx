@@ -1,4 +1,8 @@
-import { getTechBoxStyle, getTechTitleStyle, technologyStack } from "./TechCorner.utils";
+import {
+  getTechBoxStyle,
+  getTechTitleStyle,
+  technologyStack,
+} from "./TechCorner.utils";
 import { getTranslatedLabel } from "../../../../common/labels/utils";
 import { Box, Typography } from "@mui/material";
 import { RootState } from "../../../../store";
@@ -6,11 +10,12 @@ import { useSelector } from "react-redux";
 import "./TechCorner.scss";
 
 const TechCorner = () => {
-    const isDarkTheme = useSelector(
-        (state: RootState) => state.session.theme === "dark"
-      );
+  const isDarkTheme = useSelector(
+    (state: RootState) => state.session.theme === "dark"
+  );
   return (
     <Box
+      component="div"
       className="techCorner"
       id="tech-corner"
       sx={{ width: "100%", height: "fit-content" }}
@@ -18,9 +23,9 @@ const TechCorner = () => {
       <Typography variant="h5" sx={getTechTitleStyle(isDarkTheme)}>
         {getTranslatedLabel("aboutAlberto.techCorner.title")}
       </Typography>
-      <Box className="techCorner_grid">
+      <Box component="div" className="techCorner_grid">
         {technologyStack.map((tech, i) => (
-          <Box key={i} sx={getTechBoxStyle()}>
+          <Box component="div" key={i} sx={getTechBoxStyle()}>
             <img
               className="techCorner_grid_techIcon"
               onClick={() => window.open(tech.techUrl)}

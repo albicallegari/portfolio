@@ -35,6 +35,19 @@
         background-color: $color-white;
         color: $color-black;
       }
+      &_dowloadLink {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $color-black;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-decoration: none;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
     }
   }
 }

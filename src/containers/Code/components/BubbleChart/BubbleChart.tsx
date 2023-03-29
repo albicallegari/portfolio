@@ -29,7 +29,11 @@ const BubbleChart = () => {
   useEffect(() => {
     fetchCoins();
   }, []);
-  return <FunctionalBubble data={coinList} hasLabels />;
+  return (
+    <>
+      <FunctionalBubble data={coinList} hasLabels />
+    </>
+  );
 };
 
 export default BubbleChart;

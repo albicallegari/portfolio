@@ -1,4 +1,5 @@
-import profileImg from "../../../../assets/me.png";
+import profileImg from "../../../../assets/me.webp";
+import downloadImg from "../../../../assets/ico/download.svg";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import "./ProfileCard.scss";
 import generateClassName from "../../../../utils/generateClassName";
@@ -93,8 +94,11 @@ const ProfileCard = ({ goToSection }: ProfileCardProps): JSX.Element => {
           <a
             href="/pdf/callegari_alberto.pdf"
             download="Alberto-Callegari-CV.pdf"
+            className={generateClassName({
+              profileCard_card_info_dowloadLink: true,
+            })}
           >
-            Download the CV
+            <span>Download the CV</span> <img src={downloadImg} alt="" />
           </a>
         </div>
       </Box>
