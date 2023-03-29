@@ -112,13 +112,10 @@ const BSItem = ({ item }: BSItemProps): JSX.Element => {
                     : "1px solid black",
                 }}
                 onClick={() => setCurrentColorIndex(index)}
-              >
-                <p aria-label={c.label} />
-              </Box>
+              />
             ))}
           </div>
           <div className="bsItem_infoWrap_row">
-            {/* <p>{getTranslatedLabel("bloodsucker.item.price")}</p> */}
             <p>{item.price}</p>
           </div>
         </div>

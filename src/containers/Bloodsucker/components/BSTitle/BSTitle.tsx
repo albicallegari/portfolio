@@ -13,13 +13,14 @@ const BSTitle = () => {
       component="div"
       sx={{
         display: "flex",
-        flexDirection: isTablet ? "row" : "column",
+        flexDirection: "row",
         justifyContent: "center",
         gap: 1,
         marginTop: isTablet ? "16px" : "8px",
       }}
     >
       <img
+        width="340px"
         className="bsTitle_img"
         src={isDarkModeEnabled ? bbg : wbg}
         alt="bloodsucker-logo"
