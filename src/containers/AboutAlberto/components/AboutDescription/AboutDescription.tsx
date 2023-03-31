@@ -85,6 +85,39 @@ const AboutDescription = ({ goToSection }: AboutDescriptionProps) => {
         {getTranslatedLabel("aboutAlberto.aboutDescription.aboutDesc")}
       </Typography>
       <Typography
+        sx={{
+          width: isTablet ? "60%" : "70%",
+          height: "fit-content",
+          fontFamily: "Nunito, sans-serif",
+          marginTop: "16px",
+          color: isDarkTheme ? vars["color-white"] : vars["color-black"],
+        }}
+      >
+        {getTranslatedLabel("aboutAlberto.aboutDescription.aboutDesc1")}
+      </Typography>
+      <Typography
+        sx={{
+          width: isTablet ? "60%" : "70%",
+          height: "fit-content",
+          fontFamily: "Nunito, sans-serif",
+          marginTop: "16px",
+          color: isDarkTheme ? vars["color-white"] : vars["color-black"],
+        }}
+      >
+        {getTranslatedLabel("aboutAlberto.aboutDescription.aboutDesc2")}
+      </Typography>
+      <Typography
+        sx={{
+          width: isTablet ? "60%" : "70%",
+          height: "fit-content",
+          fontFamily: "Nunito, sans-serif",
+          marginTop: "16px",
+          color: isDarkTheme ? vars["color-white"] : vars["color-black"],
+        }}
+      >
+        {getTranslatedLabel("aboutAlberto.aboutDescription.aboutDesc3")}
+      </Typography>
+      <Typography
         className="aboutDescription_typing"
         sx={{
           width: isTablet ? "60%" : "70%",
@@ -95,9 +128,9 @@ const AboutDescription = ({ goToSection }: AboutDescriptionProps) => {
           ...(!isTablet ? { marginBottom: "20%" } : null),
         }}
       >
-        {getTranslatedLabel("aboutAlberto.aboutDescription.aboutDesc2")}
+        {getTranslatedLabel("aboutAlberto.aboutDescription.aboutDesc4")}
       </Typography>
-      <Box
+      {/* <Box
         component="div"
         sx={{
           display: "flex",
@@ -111,7 +144,7 @@ const AboutDescription = ({ goToSection }: AboutDescriptionProps) => {
         <a className="aboutDescription_extLink" href={getTranslatedLabel("global.nextjsUrl")}>
           {getTranslatedLabel("aboutAlberto.aboutDescription.nextjs")}
         </a>
-      </Box>
+      </Box> */}
       {isTablet && isVisible && (
         <FloatingScrollButton goToSection={goToSection} />
       )}
