@@ -1,4 +1,3 @@
-import { SxProps, Theme } from "@mui/material";
 import { BloodsuckerItem } from "./Bloodsucker.models";
 import cap11 from "../../assets/shop/caps/cap11.webp";
 import cap12 from "../../assets/shop/caps/cap12.webp";
@@ -14,15 +13,6 @@ import tee13 from "../../assets/shop/tees/tee13.webp";
 import tee21 from "../../assets/shop/tees/tee21.webp";
 import tee22 from "../../assets/shop/tees/tee22.webp";
 import tee23 from "../../assets/shop/tees/tee23.webp";
-
-export const getHeaderStyles = (): SxProps<Theme> => {
-  return {
-    width: "calc(100% - 32px)",
-    height: "100px",
-    position: "fixed",
-    zIndex: "10",
-  };
-};
 
 export const getItemsList = (): BloodsuckerItem[] => {
   const items: BloodsuckerItem[] = [

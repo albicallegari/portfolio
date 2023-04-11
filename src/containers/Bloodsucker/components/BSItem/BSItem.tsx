@@ -60,8 +60,8 @@ const BSItem = ({ item }: BSItemProps): JSX.Element => {
           onClick={handlePrev}
           sx={{
             position: "absolute",
-            top: isTablet ? "168px" : "80px",
-            left: isTablet ? "10px" : "0px",
+            top: "35%",
+            left: "2%",
             color: "black",
             cursor: "pointer",
           }}
@@ -74,8 +74,8 @@ const BSItem = ({ item }: BSItemProps): JSX.Element => {
             onClick={handleNext}
             sx={{
               position: "absolute",
-              top: isTablet ? "168px" : "80px",
-              left: isTablet ? "295px" : "160px",
+              top: "35%",
+              left: "90%",
               color: "black",
               cursor: "pointer",
             }}

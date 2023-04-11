@@ -3,6 +3,10 @@
 
 .bsItem {
   position: relative;
+  height: fit-content;
+  @media (min-width: $breakpoint-md) {
+    width: 310px;
+  }
   img {
     width: 100%;
   }

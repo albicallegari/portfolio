@@ -54,7 +54,7 @@ const ProfileCard = ({ goToSection }: ProfileCardProps): JSX.Element => {
         sx={{
           display: "flex",
           position: "absolute",
-          top: isTablet ? "calc(50% - 140px)" : "calc(50% - 275px)",
+          top: isTablet ? "calc(50% - 140px)" : "calc(50% - 225px)",
           left: isTablet ? "calc(50% - 275px)" : "calc(50% - 125px)",
           borderRadius: "5px",
           flexDirection: isTablet ? "row" : "column",
