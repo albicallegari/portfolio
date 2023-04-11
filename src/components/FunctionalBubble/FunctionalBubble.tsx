@@ -23,6 +23,7 @@ import { RootState } from "../../store";
 import { useSelector } from "react-redux";
 import isNullOrEmpty from "../../utils/isNullOrEmpty";
 import Loader, { SizeLoader } from "../Loader/Loader";
+import { formatPercentage } from "../../utils/formatPercentage";
 
 export interface FunctionalBubbleSimulationNodeDatum
   extends SimulationNodeDatum {
@@ -30,6 +31,7 @@ export interface FunctionalBubbleSimulationNodeDatum
   l: string;
   l2?: string;
   img?: string;
+  id: string;
 }
 
 interface FunctionalBubbleProps {
@@ -37,6 +39,7 @@ interface FunctionalBubbleProps {
   width?: number;
   height?: number;
   hasLabels?: boolean;
+  onSelect: (id: string) => void;
 }
 
 interface FunctionalBubbleInstanceProps {
@@ -53,6 +56,7 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
   hasLabels = false,
   width = undefined,
   height = undefined,
+  onSelect,
 }) => {
   const _this = useRef<FunctionalBubbleInstanceProps>({
     minValue: 1,
@@ -116,15 +120,6 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
 
   const percentage = (partialValue: number, totalValue: number) => {
     return (partialValue * totalValue) / 100;
-  };
-
-  const formatPercetage = (num: string) => {
-    const newNum = `${num.split(".")[0]}.${num.split(".")[1].substring(0, 2)}`;
-    if (newNum.startsWith("-")) {
-      return newNum;
-    } else {
-      return `+${newNum}`;
-    }
   };
 
   const getColorsRange = (v: number) => {
@@ -222,6 +217,7 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
             fillOpacity="0.2"
             stroke={rgb(color(item.v)).toString()}
             strokeWidth="2"
+            onClick={() => onSelect(item.id)}
           />
         );
       });
@@ -238,7 +234,7 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
     // render circle and text elements inside a group
     const texts = _.map(dataToRender, (item, index) => {
       const fontSize = radiusScale(item.v) / 3;
-      const percentFormatted = item.l2 ? formatPercetage(item.l2) : "-";
+      const percentFormatted = item.l2 ? formatPercentage(item.l2) : "-";
       const nameFormatted = item.l ? formatName(item.l) : "-";
       return (
         <g
@@ -246,6 +242,7 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
           transform={`translate(${containerWidth / 2 + (item.x as number)}, ${
             containerHeight / 2 + (item.y as number)
           })`}
+          onClick={() => onSelect(item.id)}
         >
           <circle
             r={radiusScale(item.v)}

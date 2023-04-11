@@ -3,10 +3,12 @@ import { persistedSessionSlice } from './store/sessionSlice/sessionSlice';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import loaderSlice from './store/loaderSlice/loaderSlice';
 import { useDispatch } from 'react-redux';
+import dialogSlice from './store/dialogSlice/dialogSlice';
 
 const rootReducer = combineReducers({
   session: persistedSessionSlice,
   loader: loaderSlice.reducer,
+  dialog: dialogSlice.reducer,
 });
 
 const store = configureStore({
