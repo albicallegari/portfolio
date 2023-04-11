@@ -107,7 +107,7 @@ const BubbleChart = () => {
             sx={getDialogTextStyles(isDarkTheme)}
             id="coin-percentage-24"
           >
-            {`24h: ${coinPercentage24}`}
+            {`24h: ${coinPercentage24}%`}
           </Typography>
         </Box>
       </Dialog>
