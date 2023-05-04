@@ -11,8 +11,8 @@
     "url": "git+https://github.com/albicallegari/TDD-Game-of-life.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "A.C.",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/albicallegari/TDD-Game-of-life/issues"
   },

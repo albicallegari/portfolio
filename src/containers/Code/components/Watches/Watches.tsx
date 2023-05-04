@@ -58,6 +58,7 @@ const Watches = () => {
 
   return (
     <Box
+      component="div"
       className="watches"
       sx={{
         width: isTablet ? percentage(85, windowWidth as number) : "unset",
