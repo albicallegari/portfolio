@@ -1,5 +1,5 @@
 /* eslint-disable class-methods-use-this */
-import CellState from './CellState';
+import CellState from './CellState.js';
 
 export default class Cell {
   constructor(state) {

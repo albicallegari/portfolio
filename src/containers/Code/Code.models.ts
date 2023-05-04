@@ -1,5 +1,6 @@
 export enum CodeProejects {
   BUBBLE_CHART = "BUBBLE_CHART",
+  GAME_OF_LIFE = "GAME_OF_LIFE",
   WATCHES = "WATCHES",
   WORD_CLOCK = "WORD_CLOCK",
   THREE_JS = "THREE_JS",

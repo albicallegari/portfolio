@@ -2,8 +2,8 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable operator-linebreak */
 /* eslint-disable implicit-arrow-linebreak */
-import Cell from './Cell';
-import CellState from './CellState';
+import Cell from './Cell.js';
+import CellState from './CellState.js';
 
 export default class Game {
   constructor(state) {

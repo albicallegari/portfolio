@@ -24,3 +24,12 @@ declare namespace NodeJS {
     const src: string;
     export default src;
   }
+
+  declare namespace TDDGol {
+    export class Game {};
+    export class Cell {};
+    export const CellState = {
+      ALIVE: 1,
+      DEAD: 0,
+    };
+  };

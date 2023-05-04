@@ -1,9 +1,11 @@
-import CellState from './CellState';
-import Cell from './Cell';
-import Game from './Game';
+import CellState from './CellState.js';
+import Cell from './Cell.js';
+import Game from './Game.js';
 
-export default {
+const TDDGolModule = {
   CellState,
   Cell,
   Game,
 };
+
+export default TDDGolModule;

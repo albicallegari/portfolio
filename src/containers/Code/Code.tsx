@@ -16,6 +16,7 @@ import { RootState } from "../../store";
 import "./Code.scss";
 import WordClock from "./components/WordClock/WordClock";
 import ThreeJs from "./components/ThreeJs/ThreeJs";
+import GameOfLife from "./components/GameOfLife/GameOfLife";
 
 const Code = () => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
@@ -71,6 +72,10 @@ const Code = () => {
                 label={getTranslatedLabel("global.bubbleChart")}
               />
               <Tab
+                value={CodeProejects.GAME_OF_LIFE}
+                label={getTranslatedLabel("global.gameOfLife")}
+              />
+              <Tab
                 value={CodeProejects.WATCHES}
                 label={getTranslatedLabel("global.watches")}
               />
@@ -91,6 +96,13 @@ const Code = () => {
               selectedTab={tabSelected}
             >
               <BubbleChart />
+            </TabPanel>
+            <TabPanel
+              value={CodeProejects.GAME_OF_LIFE}
+              index={CodeProejects.GAME_OF_LIFE}
+              selectedTab={tabSelected}
+            >
+              <GameOfLife />
             </TabPanel>
             <TabPanel
               value={CodeProejects.WATCHES}

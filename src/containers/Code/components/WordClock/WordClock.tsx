@@ -49,7 +49,7 @@ const WordClock = () => {
   };
 
   return (
-    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+    <Box component="div" sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
       <div className="clock container">
         <div className="row">
           <div className="col-sm active">It</div>
