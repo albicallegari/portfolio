@@ -179,11 +179,11 @@ const FunctionalBubble: FunctionComponent<FunctionalBubbleProps> = ({
       forceSimulation<FunctionalBubbleSimulationNodeDatum>()
         .nodes(clonedData)
         .velocityDecay(0.5)
-        .force("x", forceX().strength(0.05))
-        .force("y", forceY().strength(0.05))
+        .force("x", forceX().strength(0.051))
+        .force("y", forceY().strength(0.051))
         .force(
           "collide",
-          forceCollide((d) => radiusScale(d.v) + 2)
+          forceCollide((d) => radiusScale(d.v) + 3)
         )
         .on("tick", () => {
           if (_this.current.mounted) {

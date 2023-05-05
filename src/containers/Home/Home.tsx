@@ -58,6 +58,7 @@ const Home = (): JSX.Element => {
             color: themeState === "dark" ? "white" : "black",
             fontSize: "1rem",
             fontFamily: "Nunito, sans-serif",
+            ":hover": { textDecoration: "underline", textUnderlineOffset: 3 },
           }}
           className="home_container_linkTo_upsx"
           onClick={() => navigate("/about-alberto")}
@@ -69,6 +70,7 @@ const Home = (): JSX.Element => {
             color: themeState === "dark" ? "white" : "black",
             fontSize: "1rem",
             fontFamily: "Nunito, sans-serif",
+            ":hover": { textDecoration: "underline", textUnderlineOffset: 3 },
           }}
           className="home_container_linkTo_updx"
           onClick={() => navigate("/about-code")}
@@ -80,6 +82,7 @@ const Home = (): JSX.Element => {
             color: themeState === "dark" ? "white" : "black",
             fontSize: "1rem",
             fontFamily: "Nunito, sans-serif",
+            ":hover": { textDecoration: "underline", textUnderlineOffset: 3 },
           }}
           className="home_container_linkTo_dwdx"
           onClick={() => navigate("/bloodsucker")}
