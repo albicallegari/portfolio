@@ -1,0 +1,27 @@
+@import "../../../../styles/constants.scss";
+@import "../../../../styles/mixin.scss";
+
+table {
+  width: 310px;
+  height: 310px;
+  @media (min-width: $breakpoint-md) {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+.gol_title {
+  max-width: 325px;
+  text-align: center;
+  color: black;
+  @media (prefers-color-scheme: dark) {
+    color: white;
+  }
+}
+
+.gol_cell {
+  outline: 1px solid black;
+  @media (prefers-color-scheme: dark) {
+    outline: 1px solid white;
+  }
+}
