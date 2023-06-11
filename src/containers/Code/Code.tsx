@@ -90,7 +90,7 @@ const Code = () => {
               />
             </Tabs>
           </Box>
-          <Box sx={{ width: '100%', height: '100%' }} component="div">
+          <Box sx={{ width: '100%', height: '100%', overflowY: 'scroll' }} component="div">
             <TabPanel
               value={CodeProejects.BUBBLE_CHART}
               index={CodeProejects.BUBBLE_CHART}
