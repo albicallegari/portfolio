@@ -1,9 +1,10 @@
 
-export const getWrapperBoxConfig = (isTablet: boolean) => {
+export const getWrapperBoxConfig = (isTablet: boolean, isDesktop: boolean) => {
   return {
     display: "flex",
     marginTop: "24px",
     flexDirection: isTablet ? "row" : "column",
+    ...(!isTablet && !isDesktop && { height: 'calc(100vh - 144px)', overflowY: 'scroll'})
   };
 };
 export const getTabsConfig = (themeState: string) => {

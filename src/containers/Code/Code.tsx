@@ -21,6 +21,7 @@ import GameOfLife from "./components/GameOfLife/GameOfLife";
 const Code = () => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
   const isTablet = useMediaQuery(`(min-width:${vars["breakpoint-md"]})`);
+  const isDesktop = useMediaQuery(`(min-width:${vars["breakpoint-lg"]})`);
   const { theme: themeState } = useSelector(
     (state: RootState) => state.session
   );
@@ -55,7 +56,7 @@ const Code = () => {
         <CodeTitle tabSelected={tabSelected} />
         <BackNavButton />
         <Box
-          sx={getWrapperBoxConfig(isTablet)}
+          sx={getWrapperBoxConfig(isTablet, isDesktop)}
           component="div"
         >
           <Box component="div">
@@ -89,7 +90,7 @@ const Code = () => {
               />
             </Tabs>
           </Box>
-          <Box sx={{ width: '100%' }} component="div">
+          <Box sx={{ width: '100%', height: '100%' }} component="div">
             <TabPanel
               value={CodeProejects.BUBBLE_CHART}
               index={CodeProejects.BUBBLE_CHART}
