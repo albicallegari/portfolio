@@ -11,7 +11,7 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import styles from "./ChatAI.module.scss";
 
-const API_KEY = "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";
+const API_KEY = "";
 
 const ChatAI = () => {
   const [typing, setTyping] = useState(false);
