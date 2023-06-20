@@ -1,17 +1,17 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { clone } from 'ramda';
-import { DialogState, ShowPayload } from './dialogSlice.models';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { clone } from "ramda";
+import { DialogState, ShowPayload } from "./dialogSlice.models";
 
 const initialState: DialogState = {
   open: false,
   title: undefined,
   logo: undefined,
-  currentPrice: undefined,
-  percentage24: undefined,
+  info1: undefined,
+  info2: undefined,
 };
 
 const dialogSlice = createSlice({
-  name: 'dialog',
+  name: "dialog",
   initialState,
   reducers: {
     showDialog: (state, action: PayloadAction<ShowPayload>) => ({
@@ -19,8 +19,8 @@ const dialogSlice = createSlice({
       open: true,
       title: action.payload.title,
       logo: action.payload.logo,
-      currentPrice: action.payload.currentPrice,
-      percentage24: action.payload.percentage24,
+      info1: action.payload.info1,
+      info2: action.payload.info2,
     }),
     hideDialog: () => clone(initialState),
   },

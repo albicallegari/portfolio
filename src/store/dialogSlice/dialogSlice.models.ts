@@ -2,13 +2,13 @@ export interface DialogState {
   open: boolean;
   title: string | undefined;
   logo: string | undefined;
-  currentPrice: number | undefined;
-  percentage24: string | undefined;
+  info1: number | undefined;
+  info2: string | undefined;
 }
 
 export interface ShowPayload {
   title?: string;
   logo?: string;
-  currentPrice?: number;
-  percentage24?: string;
+  info1?: number;
+  info2?: string;
 }

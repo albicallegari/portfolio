@@ -63,6 +63,7 @@ const ChatAI = () => {
       messages: [systemMessage, ...apiMessages],
     };
     await fetch("http://api.openai.com/v1/chat/completions", {
+      mode: "no-cors",
       method: "POST",
       headers: {
         Authorization: "Bearer " + API_KEY,

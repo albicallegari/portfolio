@@ -11,7 +11,11 @@ import { CoinList, SingleCoin } from "../../../../api/api";
 import { RootState } from "../../../../store";
 import { Box, Dialog, Typography } from "@mui/material";
 import axios from "axios";
-import { getCoinDialogStyles, getDialogTextStyles, getDialogTitleStyles } from "./BubbleChart.utils";
+import {
+  getCoinDialogStyles,
+  getDialogTextStyles,
+  getDialogTitleStyles,
+} from "./BubbleChart.utils";
 import { formatPercentage } from "../../../../utils/formatPercentage";
 
 const BubbleChart = () => {
@@ -25,8 +29,8 @@ const BubbleChart = () => {
     open: isDialogOpen,
     title: dialogTitle,
     logo: coinLogo,
-    currentPrice: coinCurrentPrice,
-    percentage24: coinPercentage24,
+    info1: coinCurrentPrice,
+    info2: coinPercentage24,
   } = useSelector((state: RootState) => state.dialog);
 
   const coinList = useMemo(() => {
@@ -51,13 +55,16 @@ const BubbleChart = () => {
 
   const fetchSingleCoin = async (id: string) => {
     const { data } = await axios.get(SingleCoin(id));
-    console.log('data.market_data.price_change_percentage_24h', data.market_data.price_change_percentage_24h);
+    console.log(
+      "data.market_data.price_change_percentage_24h",
+      data.market_data.price_change_percentage_24h
+    );
     dispatch(
       showDialog({
         title: data.name,
         logo: data.image.small,
-        currentPrice: data.market_data.current_price.eur,
-        percentage24: formatPercentage(
+        info1: data.market_data.current_price.eur,
+        info2: formatPercentage(
           `${data.market_data.price_change_percentage_24h_in_currency.eur}`
         ),
       })

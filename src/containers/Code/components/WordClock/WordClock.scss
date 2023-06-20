@@ -21,10 +21,13 @@
   font-weight: 400;
   padding: 10px;
   opacity: 0.4;
-  color: gray;
   animation: active-rows-pulse 5s infinite;
   animation-timing-function: ease-out;
   animation-direction: alternate;
+  color: rgb(197, 197, 197);
+  @media (prefers-color-scheme: dark) {
+    color: rgb(70, 70, 70);
+  }
   @media (min-width: $breakpoint-md) {
     font-size: 2rem;
   }

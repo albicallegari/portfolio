@@ -18,6 +18,7 @@ import WordClock from "./components/WordClock/WordClock";
 import ThreeJs from "./components/ThreeJs/ThreeJs";
 import GameOfLife from "./components/GameOfLife/GameOfLife";
 import ChatAI from "./components/ChatAI/ChatAI";
+import RecipesGenerator from "./components/RecipesGenerator/RecipesGenerator";
 
 const Code = () => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
@@ -79,6 +80,10 @@ const Code = () => {
                 label={getTranslatedLabel("global.chatAi")}
               />
               <Tab
+                value={CodeProejects.RECIPES}
+                label={getTranslatedLabel("global.recipes")}
+              />
+              <Tab
                 value={CodeProejects.WATCHES}
                 label={getTranslatedLabel("global.watches")}
               />
@@ -116,6 +121,13 @@ const Code = () => {
               selectedTab={tabSelected}
             >
               <ChatAI />
+            </TabPanel>
+            <TabPanel
+              value={CodeProejects.RECIPES}
+              index={CodeProejects.RECIPES}
+              selectedTab={tabSelected}
+            >
+              <RecipesGenerator />
             </TabPanel>
             <TabPanel
               value={CodeProejects.WATCHES}

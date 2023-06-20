@@ -9,7 +9,10 @@
     "wordClock": "Word clock",
     "gameOfLife": "Game of Life",
     "chatAi": "Chat AI",
+    "recipes": "Recipes",
     "test": "TEST",
+    "discard": "Discard",
+    "insert": "Inserisci",
     "nextjsUrl": "https://albicallegari-nextjs.vercel.app/"
   },
   "aboutAlberto": {
@@ -44,7 +47,9 @@
   "aboutCode": {
     "title": "I'm collecting some",
     "code": "{code}",
-    "gameOfLife": "I integrated the TDD Game Of Life project present in my repository as a library to exploit the tests and the rules described to create this zero-player game, an automation that evolves based on the initial state"
+    "gameOfLife": "I integrated the TDD Game Of Life project present in my repository as a library to exploit the tests and the rules described to create this zero-player game, an automation that evolves based on the initial state",
+    "recipeAiIngredients": "Your list: ",
+    "recipeAiResult": "Your recipe"
   },
   "bloodsucker": {
     "desc": "Bloodsucker was born in 2015 in a small apartment in Udine, designed and created by Alberto Callegari.",
