@@ -6,12 +6,11 @@ import isNullOrEmpty from "../../../../utils/isNullOrEmpty";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { ItemColor } from "../../Bloodsucker.models";
-import vars from "../../../../styles/variables.scss";
+// import vars from "../../../../styles/variables.scss";
 import { BSItemProps } from "./BSItem.models";
 import "./BSItem.scss";
 
 const BSItem = ({ item }: BSItemProps): JSX.Element => {
-  const isTablet = useMediaQuery(`(min-width:${vars["breakpoint-md"]})`);
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
   const [currentColorIndex, setCurrentColorIndex] = useState<number>();
   const [currentColor, setCurrentColor] = useState<ItemColor>();

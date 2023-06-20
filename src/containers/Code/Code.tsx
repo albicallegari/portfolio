@@ -17,6 +17,7 @@ import "./Code.scss";
 import WordClock from "./components/WordClock/WordClock";
 import ThreeJs from "./components/ThreeJs/ThreeJs";
 import GameOfLife from "./components/GameOfLife/GameOfLife";
+import ChatAI from "./components/ChatAI/ChatAI";
 
 const Code = () => {
   const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
@@ -55,10 +56,7 @@ const Code = () => {
       <Box className="aboutCode_container" component="div">
         <CodeTitle tabSelected={tabSelected} />
         <BackNavButton />
-        <Box
-          sx={getWrapperBoxConfig(isTablet, isDesktop)}
-          component="div"
-        >
+        <Box sx={getWrapperBoxConfig(isTablet, isDesktop)} component="div">
           <Box component="div">
             <Tabs
               sx={getTabsConfig(themeState)}
@@ -77,6 +75,10 @@ const Code = () => {
                 label={getTranslatedLabel("global.gameOfLife")}
               />
               <Tab
+                value={CodeProejects.CHAT_AI}
+                label={getTranslatedLabel("global.chatAi")}
+              />
+              <Tab
                 value={CodeProejects.WATCHES}
                 label={getTranslatedLabel("global.watches")}
               />
@@ -90,7 +92,10 @@ const Code = () => {
               />
             </Tabs>
           </Box>
-          <Box sx={{ width: '100%', height: '100%', overflowY: 'scroll' }} component="div">
+          <Box
+            sx={{ width: "100%", height: "100%", overflowY: "scroll" }}
+            component="div"
+          >
             <TabPanel
               value={CodeProejects.BUBBLE_CHART}
               index={CodeProejects.BUBBLE_CHART}
@@ -104,6 +109,13 @@ const Code = () => {
               selectedTab={tabSelected}
             >
               <GameOfLife />
+            </TabPanel>
+            <TabPanel
+              value={CodeProejects.CHAT_AI}
+              index={CodeProejects.CHAT_AI}
+              selectedTab={tabSelected}
+            >
+              <ChatAI />
             </TabPanel>
             <TabPanel
               value={CodeProejects.WATCHES}

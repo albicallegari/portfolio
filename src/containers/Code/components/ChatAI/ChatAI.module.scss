@@ -1,0 +1,18 @@
+@import "../../../../styles/constants.scss";
+@import "../../../../styles/mixin.scss";
+
+.chatAI {
+  height: calc(100vh - 250px);
+  @media (min-width: $breakpoint-md) {
+    height: calc(100vh - 184px);
+  }
+  &_wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    @media (min-width: $breakpoint-md) {
+      width: 500px;
+      margin: 0px auto;
+    }
+  }
+}
