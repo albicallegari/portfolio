@@ -13,6 +13,7 @@
     "test": "TEST",
     "discard": "Discard",
     "insert": "Inserisci",
+    "submit": "Submit",
     "nextjsUrl": "https://albicallegari-nextjs.vercel.app/"
   },
   "aboutAlberto": {

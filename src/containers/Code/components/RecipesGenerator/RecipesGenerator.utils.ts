@@ -12,3 +12,20 @@ export const getIngredientsList = () => {
   );
   return svgFiles;
 };
+
+export const getFoodModel = (foodName: string) => {
+  switch (foodName) {
+    case "Beer":
+    case "Milk":
+    case "Juice":
+      return ["litres"];
+    case "Spirits":
+    case "Wine":
+    case "Cocktail":
+      return ["litres", "kindOf"];
+    case "Coffee":
+      return ["litres-grams"];
+    default:
+      return ["grams"];
+  }
+};

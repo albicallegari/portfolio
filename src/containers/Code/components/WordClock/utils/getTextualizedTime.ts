@@ -26,20 +26,25 @@ const minutesToText = {
   30: "half",
 };
 export const formatHour = (date: Date) => {
-  var hours = date.getHours();
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  return hours;
-}
+  const hours = date.getHours();
+  if (hours === 0) {
+    return 12;
+  } else if (hours === 12) {
+    return 0;
+  } else return hours % 12;
+};
 
 const getTextualizedTime = () => {
   const date = new Date();
   const minutes = date.getMinutes();
   const previousFiveMinutes = 5 * Math.floor(minutes / 5);
-  const textualizedMinutes = minutesToText[previousFiveMinutes as keyof typeof minutesToText];
+  const textualizedMinutes =
+    minutesToText[previousFiveMinutes as keyof typeof minutesToText];
   const textualizedHour =
     previousFiveMinutes > 30
-      ? hourToText[formatHour(date) + 1 as keyof typeof hourToText]
+      ? hourToText[
+          ((formatHour(date) as number) + 1) as keyof typeof hourToText
+        ]
       : hourToText[formatHour(date) as keyof typeof hourToText];
   return {
     minutes: textualizedMinutes,

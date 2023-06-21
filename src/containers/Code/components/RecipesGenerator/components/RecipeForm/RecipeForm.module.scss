@@ -1,0 +1,30 @@
+@import "../../../../../../styles/constants.scss";
+@import "../../../../../../styles/mixin.scss";
+
+.recipeForm {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &_name {
+    font-size: rem(16px);
+    font-weight: 700;
+    margin-bottom: 24px;
+    margin-top: 24px;
+  }
+  &_submitAction {
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    color: $color-white;
+    background-color: $color-black;
+  }
+  &_discardAction {
+    text-decoration: underline;
+    text-underline-offset: 1px;
+  }
+}
+
+.inputField {
+  margin-bottom: 24px;
+}
