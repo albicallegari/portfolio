@@ -92,8 +92,8 @@ const ProfileCard = ({ goToSection }: ProfileCardProps): JSX.Element => {
             {getTranslatedLabel("aboutAlberto.profileCard.secondRole")}
           </TextElement>
           <a
-            href="/pdf/callegari_alberto.pdf"
-            download="Alberto-Callegari-CV.pdf"
+            href="/pdf/callegari_cv.pdf"
+            download="callegari_cv.pdf"
             className={generateClassName({
               profileCard_card_info_dowloadLink: true,
             })}
